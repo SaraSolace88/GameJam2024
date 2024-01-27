@@ -6,7 +6,7 @@ public class RhythmSystem : MonoBehaviour
     //the current position of the song (in seconds)
     private float songPos;
     //the current position of the song (in beats)
-    private float songPosInBeats;
+    public float songPosInBeats;
     //the duration of a beat;
     private float secPerBeat;
     //how much time (in seconds) has passed since the song started
@@ -14,7 +14,7 @@ public class RhythmSystem : MonoBehaviour
     //bool for if song is started or not
     [SerializeField] private bool songState, test;
     //amount of beats to show on track
-    [SerializeField] private int beatsShownInAdvance;
+    public int beatsShownInAdvance;
 
     //prefab called song that holds audio to play and songstats
     [SerializeField] private GameObject song;
@@ -55,10 +55,8 @@ public class RhythmSystem : MonoBehaviour
     {
         test = false;
         songState = true;
-        Debug.Log("before");
         //record the time when the song starts
         dspTimeStart = (float)AudioSettings.dspTime;
-        Debug.Log("what what in the butt");
         //starts the song audio
         if (song.TryGetComponent<AudioSource>(out AudioSource source))
         {
