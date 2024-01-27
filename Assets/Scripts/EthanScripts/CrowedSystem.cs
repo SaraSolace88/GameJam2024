@@ -18,10 +18,10 @@ public class CrowedSystem : MonoBehaviour
     [SerializeField] private GameObject TargetC2;
     [SerializeField] private GameObject TargetC3;
 
-    public bool C2UP;
-    public bool C2DOWN;
-    public bool C3UP;
-    public bool C3DOWN;
+    private bool C2UP;
+    private bool C2DOWN;
+    private bool C3UP;
+    private bool C3DOWN;
 
     public bool Crowed2;
 
