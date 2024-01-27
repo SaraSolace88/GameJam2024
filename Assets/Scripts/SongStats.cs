@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongStats : MonoBehaviour
@@ -15,11 +16,13 @@ public class SongStats : MonoBehaviour
     private int nextIndex = 0;
 
     [SerializeField] private GameObject musicNote;
+    private GameObject rhythmSystem;
 
     private void OnEnable()
     {
         RhythmSystem.SpawnNote += SpawnNote;
     }
+    
 
     private void OnDisable()
     {
@@ -36,6 +39,7 @@ public class SongStats : MonoBehaviour
         {
             GameObject tmp = Instantiate(musicNote);
             tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).transform.position;
+            tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x);
             nextIndex++;
         }
     }
