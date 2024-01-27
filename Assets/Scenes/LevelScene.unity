@@ -2780,6 +2780,10 @@ PrefabInstance:
       value: RhythmManager
       objectReference: {fileID: 0}
     - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: PS
+      value: 
+      objectReference: {fileID: 295661384}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: song
       value: 
       objectReference: {fileID: 1951255979}

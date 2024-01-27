@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class RhythmSystem : MonoBehaviour
 {
-    public PauseMenu PS;
+    public PauseMenu PS; // Pause Menu Script
+
 
     //the current position of the song (in seconds)
     private float songPos;
