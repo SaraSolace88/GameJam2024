@@ -89,7 +89,20 @@ public class joke_gen : MonoBehaviour
         {
             return;
         }
-        const int uhh_min = 5;
+
+        List<string> base_uhhs = new List<string>()
+            {
+                "uhh",
+                "...",
+                "aaa",
+                "bruh",
+                "your mom"
+            };
+        var rand = new System.Random();
+        int selection = rand.Next(0,base_uhhs.Count);
+
+
+        int uhh_min = base_uhhs[selection].Length;
         int uhh_length = 0;
 
         int uhh_words_progress = words_progress;
@@ -105,8 +118,6 @@ public class joke_gen : MonoBehaviour
         }
         while(uhh_length < uhh_min)
         {
-
-
             int glyphs_left = words[uhh_words_progress][word_glyph_progress..].Length;
             uhh_length += glyphs_left;
             word_glyph_progress = 0; // always starting at the beginning of the words.
@@ -127,8 +138,8 @@ public class joke_gen : MonoBehaviour
             return;
         }
 
-        const string base_uhh = "uuhhh";
-        umm_str = base_uhh + new string('.', uhh_length - uhh_min);
+        
+        umm_str = base_uhhs[selection] + new string('.', uhh_length - uhh_min);
     }
 
 
