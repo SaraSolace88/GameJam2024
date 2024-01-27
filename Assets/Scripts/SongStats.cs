@@ -16,6 +16,15 @@ public class SongStats : MonoBehaviour
     private int nextIndex = 0;
 
     [SerializeField] private GameObject musicNote;
+
+    // Array of joke section start and end times in beats.
+    /* [
+        [4, 12] start on beat 4 end on beat 12 (inclusive)
+        [20, 40]
+    ]
+    */
+    [SerializeField] public Vector2[] joke_sections;
+
     private GameObject rhythmSystem;
 
     private void OnEnable()

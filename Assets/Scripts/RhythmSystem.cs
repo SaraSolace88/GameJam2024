@@ -13,6 +13,10 @@ public class RhythmSystem : MonoBehaviour
     private float dspTimeStart;
     //bool for if song is started or not
     [SerializeField] private bool songState, test;
+
+    // Joke section we're on right now.
+    private int joke_section_idx = 0;
+
     //amount of beats to show on track
     public int beatsShownInAdvance;
 
@@ -21,6 +25,15 @@ public class RhythmSystem : MonoBehaviour
 
     //check if next note should be spawned
     public static Action<float> SpawnNote = delegate { };
+
+    // Tell everyone the song has started and the dsp's song start.
+    public static Action<float> OnSongStart = delegate {};
+
+    // Tell everyone that a new song section has started.
+    // float : how long the section is in seconds.
+    public static Action<float> OnJokeStart = delegate {};
+
+    public static Action OnJokeEnd = delegate {};
 
     private void Start()
     {
@@ -45,9 +58,39 @@ public class RhythmSystem : MonoBehaviour
             songPos = (float)(AudioSettings.dspTime - dspTimeStart);
 
             //calculate the position in beats
+            float old_beat_pos = songPosInBeats;
             songPosInBeats = songPos / secPerBeat;
-            Debug.Log(songPosInBeats);
             SpawnNote(songPosInBeats + beatsShownInAdvance);
+
+            if((int)old_beat_pos != (int)songPosInBeats) {
+                // new beat!
+                OnBeat(songPosInBeats);
+            }
+           
+        }
+    }
+
+    private void OnBeat(float time_in_beats) {
+
+        // See if the start or end of a joke section has been reached.
+        if (song.TryGetComponent<SongStats>(out SongStats stats))
+        {
+            // This condition might not work if we skip enough frames to skip a whole beat.
+            // to fix that, maybe just offset dsptimestart?
+            if(stats.joke_sections[joke_section_idx][0] == (int)time_in_beats) {
+                // Notify subscribers that a new joke section has started.
+                float time_of_end_sec = secPerBeat * stats.joke_sections[joke_section_idx][1];
+                float joke_length_sec = time_of_end_sec - secPerBeat*time_in_beats;
+                OnJokeStart(joke_length_sec);
+            }else if(stats.joke_sections[joke_section_idx][1] == (int)time_in_beats){
+                OnJokeEnd();
+
+                // Check if there are any joke sections left.
+                if(stats.joke_sections.Length != joke_section_idx + 1) {
+                    // There is one!
+                    joke_section_idx += 1;
+                }
+            }
         }
     }
 
@@ -62,5 +105,7 @@ public class RhythmSystem : MonoBehaviour
         {
             source.Play();
         }
+
+        OnSongStart(dspTimeStart);
     }
 }
