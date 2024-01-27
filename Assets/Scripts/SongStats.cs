@@ -9,7 +9,7 @@ public class SongStats : MonoBehaviour
 
     //keep all the position-in-beats of notes in the song and collum of track.
     //Vector2(position, collum)
-    private Vector2[] notes;
+    [SerializeField] private Vector2[] notes;
 
     //the index of the next note to be spawned
     private int nextIndex = 0;
@@ -34,7 +34,9 @@ public class SongStats : MonoBehaviour
     {
         if(nextIndex < notes.Length && notes[nextIndex].x < beats)
         {
-            Instantiate(musicNote);
+            GameObject tmp = Instantiate(musicNote);
+            tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).transform.position;
+            nextIndex++;
         }
     }
 }

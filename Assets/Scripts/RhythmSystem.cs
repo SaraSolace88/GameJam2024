@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class RhythmSystem : MonoBehaviour
@@ -11,9 +10,9 @@ public class RhythmSystem : MonoBehaviour
     //the duration of a beat;
     private float secPerBeat;
     //how much time (in seconds) has passed since the song started
-    private float dspTimeSong;
+    private float dspTimeStart;
     //bool for if song is started or not
-    private bool songState;
+    [SerializeField] private bool songState, test;
     //amount of beats to show on track
     [SerializeField] private int beatsShownInAdvance;
 
@@ -27,33 +26,39 @@ public class RhythmSystem : MonoBehaviour
     {
         //calculate how many seconds is one beat
         //we will see the declaration of bpm later
-        if(song.TryGetComponent<SongStats>(out SongStats stats))
+        if (song.TryGetComponent<SongStats>(out SongStats stats))
         {
             secPerBeat = 60f / stats.GetBPM();
         }
-
-        //record the time when the song starts
-        dspTimeSong = (float) AudioSettings.dspTime;
     }
 
     private void Update()
     {
+        if(test)
+        {
+            StartSong();
+
+        }
         if(songState)
         {
             //calculate the position in seconds
-            songPos = (float)(AudioSettings.dspTime - dspTimeSong);
+            songPos = (float)(AudioSettings.dspTime - dspTimeStart);
 
             //calculate the position in beats
             songPosInBeats = songPos / secPerBeat;
-
+            Debug.Log(songPosInBeats);
             SpawnNote(songPosInBeats + beatsShownInAdvance);
         }
     }
 
     private void StartSong()
     {
+        test = false;
         songState = true;
-
+        Debug.Log("before");
+        //record the time when the song starts
+        dspTimeStart = (float)AudioSettings.dspTime;
+        Debug.Log("what what in the butt");
         //starts the song audio
         if (song.TryGetComponent<AudioSource>(out AudioSource source))
         {
