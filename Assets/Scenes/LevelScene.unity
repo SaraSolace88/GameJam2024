@@ -218,6 +218,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: song
       objectReference: {fileID: 0}
+    - target: {fileID: 7200449222494184239, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+      propertyPath: joke_sections.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200449222494184239, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+      propertyPath: joke_sections.Array.data[0].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200449222494184239, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+      propertyPath: joke_sections.Array.data[0].y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200449222494184239, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+      propertyPath: joke_sections.Array.data[1].x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200449222494184239, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+      propertyPath: joke_sections.Array.data[1].y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8195788049932777722, guid: 51113253b2b16e143be7226112497dbd, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1664,9 +1684,9 @@ RectTransform:
   - {fileID: 1392751676}
   m_Father: {fileID: 187490237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -901, y: 486.41174}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62, y: -59}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052731625
@@ -3066,6 +3086,10 @@ PrefabInstance:
       propertyPath: Lightnumb
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
+      propertyPath: MicSprite
+      value: 
+      objectReference: {fileID: 1674020781}
     - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: Stagenumb
       value: 

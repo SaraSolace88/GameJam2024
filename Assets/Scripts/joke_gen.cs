@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 using static jokes;
@@ -61,18 +63,22 @@ public class joke_gen : MonoBehaviour
         // This is how you change the text.
         joke_text.text = "";
 
-        // Subscribing to rhythm system things.
-        RhythmSystem.OnSongStart += delegate(float dsp_song_start){
+        Array.Fill(used, false);
+        
+    }
+    private void set_dsp_time(float dsp_song_start) { 
             dsp_start_time = dsp_song_start;
-            // Debug.Log($"Joke Generator says : dsp's song start is {dsp_start_time}");
-        };
 
-        RhythmSystem.OnJokeStart += delegate(float joke_length_sec) {
+    }
+    private void OnEnable() {
+        // Subscribing to rhythm system things.
+        RhythmSystem.OnSongStart += set_dsp_time;
+        RhythmSystem.OnJokeStart += start_new_joke;
+    }
 
-            start_new_joke(joke_length_sec);
-        };
-
-        Array.Fill(used, false);    
+    private void OnDisable() {
+        RhythmSystem.OnSongStart -= set_dsp_time;
+        RhythmSystem.OnJokeStart -= start_new_joke;
 
     }
 
@@ -134,6 +140,7 @@ public class joke_gen : MonoBehaviour
 
     void start_new_joke(float joke_length_sec)
     {
+        Debug.Log("Starting new joke");
         if(running_joke == true)
         {
             Debug.Log("Starting a new joke while one is already running? Are you sure you want to do that?");
