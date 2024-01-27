@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: song
       value: 
       objectReference: {fileID: 1866323750}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: beatsShownInAdvance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

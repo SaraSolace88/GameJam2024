@@ -38,8 +38,9 @@ public class SongStats : MonoBehaviour
         if(nextIndex < notes.Length && notes[nextIndex].x < beats)
         {
             GameObject tmp = Instantiate(musicNote);
-            tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).transform.position;
+            tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).GetChild(0).transform.position;
             tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x);
+            tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
             nextIndex++;
         }
     }
