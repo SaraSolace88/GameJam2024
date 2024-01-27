@@ -1664,8 +1664,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.2599235, g: 0.9339623, b: 0.9052798, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1684,8 +1684,8 @@ Transform:
   m_GameObject: {fileID: 779181839}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.2499995, z: 0}
-  m_LocalScale: {x: 2.4999998, y: 0.83333325, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1828156623}
@@ -1771,7 +1771,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 807292720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103972663}
+        m_TargetAssemblyTypeName: CosmeticsSystem, Assembly-CSharp
+        m_MethodName: RightHead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &807292720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1876,7 +1888,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &819764189
@@ -4652,7 +4664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621678959}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103972663}
+        m_TargetAssemblyTypeName: CosmeticsSystem, Assembly-CSharp
+        m_MethodName: LeftHead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621678959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4877,7 +4901,7 @@ SpriteRenderer:
   m_Size: {x: 30.24, y: 40.319996}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1674020783
@@ -5382,7 +5406,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 45e6d8deaaf589e40bad7a105c199beb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65a125fbbd7c28842af4528dde438acc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6487,6 +6511,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1426801300}
     - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
+      propertyPath: HeadSprite
+      value: 
+      objectReference: {fileID: 779181839}
+    - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: StageSprite
       value: 
       objectReference: {fileID: 819764187}
@@ -6494,6 +6522,10 @@ PrefabInstance:
       propertyPath: PlayerSprite
       value: 
       objectReference: {fileID: 1828156621}
+    - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
+      propertyPath: HeadSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
     - target: {fileID: 5209286177658469054, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: m_Name
       value: CustomizationObj

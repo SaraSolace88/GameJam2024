@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeadSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 678f7bf880ab29247a25ea59a507ae6f, type: 3}
+  - {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
+  - {fileID: 21300000, guid: 2c5dd1e0cffe8b549a22d18a7b8ae1d8, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   StageSprites:
-  - {fileID: 21300000, guid: 9032ad7cd219263448abb8603beeb5f8, type: 3}
+  - {fileID: 21300000, guid: 9be84be5de4a25843a296d4f1d2dcf91, type: 3}
   - {fileID: 21300000, guid: c0c1eb5dfb8dadb44954baae22fac825, type: 3}
   - {fileID: 0}
   - {fileID: 0}
