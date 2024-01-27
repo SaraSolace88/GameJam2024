@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI ResSettingDisplay;
 
     public bool IsLevel;
+    private double pauseStartTime;
+    private double audioPausedTime;
 
     private void Start()
     {
@@ -57,17 +59,25 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-      //  AudioSettings.dspTime
+        pauseStartTime = AudioSettings.dspTime;
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
     }
     public void Resume()
     {
+        double pauseDuration = AudioSettings.dspTime - pauseStartTime;
+        audioPausedTime += pauseDuration;
+
         PausePanel.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
     }
+    double GetAdjustedAudioTime()
+    {
+        return AudioSettings.dspTime - audioPausedTime;
+    }
+
     public void OpenSettings()
     {
         SettingsPanel.SetActive(true);

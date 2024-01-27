@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RhythmSystem : MonoBehaviour
 {
+    public PauseMenu PS;
+
     //the current position of the song (in seconds)
     private float songPos;
     //the current position of the song (in beats)
@@ -13,7 +15,6 @@ public class RhythmSystem : MonoBehaviour
     private float dspTimeStart;
     //bool for if song is started or not
     [SerializeField] private bool songState, test;
-
     // Joke section we're on right now.
     private int joke_section_idx = 0;
 
@@ -47,26 +48,30 @@ public class RhythmSystem : MonoBehaviour
 
     private void Update()
     {
-        if(test)
+        if (!PS.IsPaused)
         {
-            StartSong();
+            if (test)
+            {
+                StartSong();
 
-        }
-        if(songState)
-        {
-            //calculate the position in seconds
-            songPos = (float)(AudioSettings.dspTime - dspTimeStart);
-
-            //calculate the position in beats
-            float old_beat_pos = songPosInBeats;
-            songPosInBeats = songPos / secPerBeat;
-            SpawnNote(songPosInBeats + beatsShownInAdvance);
-
-            if((int)Math.Floor(old_beat_pos) != (int)Math.Floor(songPosInBeats)) {
-                // new beat!
-                OnBeat(songPosInBeats);
             }
-           
+            if (songState)
+            {
+                //calculate the position in seconds
+                songPos = (float)(AudioSettings.dspTime - dspTimeStart);
+
+                //calculate the position in beats
+                float old_beat_pos = songPosInBeats;
+                songPosInBeats = songPos / secPerBeat;
+                SpawnNote(songPosInBeats + beatsShownInAdvance);
+
+                if ((int)Math.Floor(old_beat_pos) != (int)Math.Floor(songPosInBeats))
+                {
+                    // new beat!
+                    OnBeat(songPosInBeats);
+                }
+
+            }
         }
     }
 
