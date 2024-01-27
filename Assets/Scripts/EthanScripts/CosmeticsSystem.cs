@@ -26,6 +26,7 @@ public class CosmeticsSystem : MonoBehaviour
     [Header("List of GameObjects")]
     [SerializeField] private GameObject PlayerSprite;
     [SerializeField] private GameObject StageSprite;
+    [SerializeField] private GameObject MicSprite;
 
     public bool BLevel;
 
@@ -44,10 +45,15 @@ public class CosmeticsSystem : MonoBehaviour
             SelSkin = PlayerPrefs.GetInt("SkinNumb");
         }
         PlayerSprite.GetComponent<SpriteRenderer>().color = SkinColors[SelSkin];
-        
+
+        if (PlayerPrefs.HasKey("MicNumb"))
+        {
+            SelMic = PlayerPrefs.GetInt("MicNumb");
+        }
+        MicSprite.GetComponent<SpriteRenderer>().sprite = MicSprites[SelMic];
 
 
-        if(PlayerPrefs.HasKey("StageNumb"))
+        if (PlayerPrefs.HasKey("StageNumb"))
         {
             SelStage = PlayerPrefs.GetInt("StageNumb");
         }
@@ -144,6 +150,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelMic = 0;
         }
+        MicSprite.GetComponent<SpriteRenderer>().sprite = MicSprites[SelMic];
+        PlayerPrefs.SetInt("MicNumb", SelMic);
     }
     public void RightMic()
     {
@@ -152,6 +160,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelMic = MicSprites.Count - 1;
         }
+        MicSprite.GetComponent<SpriteRenderer>().sprite = MicSprites[SelMic];
+        PlayerPrefs.SetInt("MicNumb", SelMic);
     }
     public void LeftLight()
     {

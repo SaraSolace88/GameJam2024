@@ -81,14 +81,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   MicSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 05995531c958bd1428bb5ca04a99bce3, type: 3}
+  - {fileID: 21300000, guid: 9d44e438ac52485469487b559f4eee76, type: 3}
+  - {fileID: 21300000, guid: 97b917077bc820641be88d69bc2f7714, type: 3}
+  - {fileID: 21300000, guid: 5af50edfb3437fe418dbab5ce3ab41dc, type: 3}
+  - {fileID: 21300000, guid: e91c9dc8d402d6345b45e7f3f89408f5, type: 3}
+  - {fileID: 21300000, guid: 500027448cab94941b2e4ae04dd7b499, type: 3}
+  - {fileID: 21300000, guid: 186833652473a1547b711a07e2ca6bfc, type: 3}
+  - {fileID: 21300000, guid: f043b733db4df2740a591a9f4ca0ce4e, type: 3}
   LightSprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -115,4 +115,5 @@ MonoBehaviour:
   Lightnumb: {fileID: 0}
   Stagenumb: {fileID: 0}
   PlayerSprite: {fileID: 0}
+  StageSprite: {fileID: 0}
   BLevel: 0

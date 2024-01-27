@@ -73,7 +73,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         IsPaused = false;
     }
-    double GetAdjustedAudioTime()
+    public double GetAdjustedAudioTime()
     {
         return AudioSettings.dspTime - audioPausedTime;
     }
@@ -86,6 +86,7 @@ public class PauseMenu : MonoBehaviour
     {
         SettingsPanel.SetActive(false);
     }
+
     public void ResLeft()
     {
         SelectedRes--;
