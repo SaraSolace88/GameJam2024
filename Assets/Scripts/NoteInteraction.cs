@@ -47,7 +47,7 @@ public class NoteInteraction : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        collision.GetComponent<GameActionSequence>().Play();
     }
 
     private void ButtonPressed(InputAction.CallbackContext c)
