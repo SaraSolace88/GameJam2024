@@ -1,9 +1,8 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongStats : MonoBehaviour
 {
-
+    [SerializeField] private PauseMenu PS;
 
     //beats per minute of a song
     private float bpm = 136;
@@ -24,6 +23,7 @@ public class SongStats : MonoBehaviour
     ]
     */
     [SerializeField] public Vector2[] joke_sections;
+    private bool paused;
 
     private GameObject rhythmSystem;
 
@@ -31,7 +31,19 @@ public class SongStats : MonoBehaviour
     {
         RhythmSystem.SpawnNote += SpawnNote;
     }
-    
+
+    private void Update()
+    {
+        if (PS.IsPaused)
+        {
+            gameObject.GetComponent<AudioSource>().Pause();
+            paused = true;
+        }else if (paused)
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+            paused = false;
+        }
+    }
 
     private void OnDisable()
     {
