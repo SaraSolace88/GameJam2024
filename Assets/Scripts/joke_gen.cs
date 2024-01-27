@@ -4,6 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+using static jokes;
+// TODO:
+// Switch between quality of jokes (3 levels)
+// [x] different uhh's.
+// Integrate with Rhythm System.
+// 
+
+
 public class joke_gen : MonoBehaviour
 {
 
@@ -18,16 +26,19 @@ public class joke_gen : MonoBehaviour
     AudioSource audio_source;
     float dsp_start_time;
 
-    const String the_joke = "What's the deal with airplane food?";
+    String the_joke = "";
     int joke_progress = 0; // How many glyphs are we displaying?
     int umm_progress = 0;
     String umm_str = "";
 
     int words_progress = 0;
     int word_glyph_progress = 0; // Be careful!
-    string[] words = the_joke.Split(" ");
+    string[] words;
     String rendered_joke = "";
     bool put_space_next_update = false;
+
+    bool running_joke = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,9 +71,7 @@ public class joke_gen : MonoBehaviour
             Debug.LogError("Joke Manager : GameObject 'audio_source' doesn't have the component 'AudioSource'!");
             return;
         }
-        // Record the time in seconds when the song starts (based on the number of samples of the audio processor).
-        dsp_start_time = (float)AudioSettings.dspTime;
-        audio_source.Play();
+
         // ====================
 
         // Context init =================================
@@ -76,7 +85,7 @@ public class joke_gen : MonoBehaviour
     void Uhhh()
     {
 
-        if (umm_str.Length > 0 || joke_progress == the_joke.Length)
+        if (umm_str.Length > 0 || joke_progress == the_joke.Length || the_joke.Length == 0)
         {
             return;
         }
@@ -122,20 +131,57 @@ public class joke_gen : MonoBehaviour
         umm_str = base_uhh + new string('.', uhh_length - uhh_min);
     }
 
+
+    void start_new_joke()
+    {
+        if(running_joke == true)
+        {
+            Debug.Log("Starting a new joke while one is already running? Are you sure you want to do that?");
+        }
+
+        // Record the time in seconds when the song starts (based on the number of samples of the audio processor).
+        dsp_start_time = (float)AudioSettings.dspTime;
+        audio_source.Play();
+
+        int num_of_jokes = jokes.so_many_jokes.Length;
+        System.Random rand_sys = new System.Random();
+        int joke_idx = rand_sys.Next(0, num_of_jokes);
+
+        // pick the joke to use.
+        the_joke = jokes.so_many_jokes[joke_idx];
+        
+        // Init other variables.
+        words = the_joke.Split(" ");
+        joke_progress = 0;
+        umm_progress = 0;
+        words_progress = 0;
+        word_glyph_progress = 0;
+        put_space_next_update = false;
+        rendered_joke = "";
+
+        running_joke = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown("s"))
+        {
+            start_new_joke();
+        }
 
         if(Input.GetKeyDown("a"))
         {
-            //Debug.Log("yo mama");
             Uhhh();
         }
 
-        if ( joke_progress == the_joke.Length)
+
+        // If we are finished, be done.
+        if ( running_joke == false )
         {
             return;
         }
+
         float song_time_sec = ((float)AudioSettings.dspTime - dsp_start_time);
 
         float last_glyph_written_sec = joke_progress / glyphs_per_second;
@@ -177,6 +223,12 @@ public class joke_gen : MonoBehaviour
             joke_progress += 1;
 
             joke_text.text = rendered_joke;
+
+            // check if we have finished. If we have, don't do anymore.
+            if (joke_progress == the_joke.Length)
+            {
+                running_joke = false;
+            }
         }
     }
 }

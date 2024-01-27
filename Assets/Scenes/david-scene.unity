@@ -183,8 +183,8 @@ MonoBehaviour:
   m_text: Did you hear about the guy whose left side was cut off? He's all right
     now.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0c9a3a1a7623ab0478e261e96f59f21d, type: 2}
-  m_sharedMaterial: {fileID: -7471835640028292717, guid: 0c9a3a1a7623ab0478e261e96f59f21d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0be373f2abe13ca45a447b4016a93ef7, type: 2}
+  m_sharedMaterial: {fileID: -7471835640028292717, guid: 0be373f2abe13ca45a447b4016a93ef7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 281548850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dcf2fe4cb7f721469fcfaa64820ce4c, type: 3}
+  m_Script: {fileID: 11500000, guid: a24efbd524e652047925888a1afc4d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   joke_text_obj: {fileID: 203880916}
@@ -516,8 +516,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c25ae69cf8e6d294382f81ae5b864102, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: b19deeb854c8dba4a9671479db591f6d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
