@@ -22,6 +22,7 @@ public class NoteMovement : MonoBehaviour
         {
             removePos = rhythmManager.transform.GetChild(collum).GetChild(1);
         }
+
         if(spawnPos && removePos)
         {
             transform.position = Vector2.Lerp(
@@ -30,6 +31,11 @@ public class NoteMovement : MonoBehaviour
             (rhythmManager.GetComponent<RhythmSystem>().beatsShownInAdvance -
             (beatOfThisNote - rhythmManager.GetComponent<RhythmSystem>().songPosInBeats))
             / rhythmManager.GetComponent<RhythmSystem>().beatsShownInAdvance);
+        }
+
+        if(removePos.position == transform.position)
+        {
+            Destroy(gameObject);
         }
     }
 
