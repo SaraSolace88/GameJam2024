@@ -18,9 +18,16 @@ public class joke_gen : MonoBehaviour
     AudioSource audio_source;
     float dsp_start_time;
 
+    const String the_joke = "What's the deal with airplane food?";
     int joke_progress = 0; // How many glyphs are we displaying?
-    String the_joke = "What's the deal with airplane food?";
+    int umm_progress = 0;
+    String umm_str = "";
 
+    int words_progress = 0;
+    int word_glyph_progress = 0; // Be careful!
+    string[] words = the_joke.Split(" ");
+    String rendered_joke = "";
+    bool put_space_next_update = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +35,7 @@ public class joke_gen : MonoBehaviour
         // Joke things
         if (joke_text_obj == null)
         {
-            Console.Error.WriteLine("Joke Manager : GameObject 'joke_text_obj' is not set!");
+            Debug.LogError("Joke Manager : GameObject 'joke_text_obj' is not set!");
             return;
 
         }
@@ -36,7 +43,7 @@ public class joke_gen : MonoBehaviour
 
         if (joke_text == null)
         {
-            Console.Error.WriteLine("Joke Manager : GameObject 'joke_text' doesn't have the component 'TMP_Text'!");
+            Debug.LogError("Joke Manager : GameObject 'joke_text' doesn't have the component 'TMP_Text'!");
             return;
         }
         // ============
@@ -44,13 +51,13 @@ public class joke_gen : MonoBehaviour
         // Audio things.
         if (audio_source_obj == null)
         {
-            Console.Error.WriteLine("Joke Manager : GameObject 'audio_source_obj' is not set!");
+            Debug.LogError("Joke Manager : GameObject 'audio_source_obj' is not set!");
             return;
         }
         audio_source = audio_source_obj.GetComponent<AudioSource>();
         if (audio_source == null)
         {
-            Console.Error.WriteLine("Joke Manager : GameObject 'audio_source' doesn't have the component 'AudioSource'!");
+            Debug.LogError("Joke Manager : GameObject 'audio_source' doesn't have the component 'AudioSource'!");
             return;
         }
         // Record the time in seconds when the song starts (based on the number of samples of the audio processor).
@@ -66,9 +73,65 @@ public class joke_gen : MonoBehaviour
 
     }
 
+    void Uhhh()
+    {
+
+        if (umm_str.Length > 0 || joke_progress == the_joke.Length)
+        {
+            return;
+        }
+        const int uhh_min = 5;
+        int uhh_length = 0;
+
+        int uhh_words_progress = words_progress;
+
+        float song_time_sec = ((float)AudioSettings.dspTime - dsp_start_time);
+
+        float last_glyph_written_sec = joke_progress / glyphs_per_second;
+
+
+        if (the_joke.Length - joke_progress < uhh_min+1)
+        {
+            return;
+        }
+        while(uhh_length < uhh_min)
+        {
+
+
+            int glyphs_left = words[uhh_words_progress][word_glyph_progress..].Length;
+            uhh_length += glyphs_left;
+            word_glyph_progress = 0; // always starting at the beginning of the words.
+            uhh_words_progress += 1; // look at next word.
+            words_progress += 1;
+
+            // Good luck.
+            // Only add 1 to the uhh_length when this while loop *will* run again at least once.
+            if(uhh_length < uhh_min-1)
+            {
+                uhh_length += 1; // Accounts for the spaces between words.
+            }
+        }
+        
+        if(uhh_length < uhh_min)
+        {
+            Debug.LogError("HALT AND CATCH FIRE!");
+            return;
+        }
+
+        const string base_uhh = "uuhhh";
+        umm_str = base_uhh + new string('.', uhh_length - uhh_min);
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown("a"))
+        {
+            //Debug.Log("yo mama");
+            Uhhh();
+        }
+
         if ( joke_progress == the_joke.Length)
         {
             return;
@@ -80,8 +143,40 @@ public class joke_gen : MonoBehaviour
         // Amount of time (in seconds) since the last glyph has been written.
         float glyph_diff = song_time_sec - last_glyph_written_sec;
         if(glyph_diff >= (1/glyphs_per_second) ) {
+
+            if(put_space_next_update)
+            {
+                put_space_next_update = false;
+                rendered_joke += " ";
+            }
+            else if (umm_str.Length > 0)
+            {
+                rendered_joke += umm_str[umm_progress];
+                umm_progress += 1;
+
+                if ( umm_progress == umm_str.Length)
+                {
+                    umm_str = "";
+                    umm_progress = 0;
+                    put_space_next_update = true;
+                }
+            }
+            else
+            {
+                // Continue the joke.
+                rendered_joke += words[words_progress][word_glyph_progress];
+                word_glyph_progress += 1;
+                if(word_glyph_progress == words[words_progress].Length)
+                {
+                    words_progress += 1;
+                    word_glyph_progress = 0;
+                    put_space_next_update = true;
+                }
+            }
+
             joke_progress += 1;
-            joke_text.text = the_joke[..joke_progress];
+
+            joke_text.text = rendered_joke;
         }
     }
 }
