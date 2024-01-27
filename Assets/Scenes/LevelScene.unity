@@ -2173,7 +2173,7 @@ SpriteRenderer:
   m_Size: {x: 30.24, y: 40.319996}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1674020783
@@ -2785,10 +2785,6 @@ PrefabInstance:
       propertyPath: song
       value: 
       objectReference: {fileID: 2146937816}
-    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: beatsShownInAdvance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
