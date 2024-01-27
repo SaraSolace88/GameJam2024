@@ -2116,8 +2116,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 8562725524084494134}
   m_HandleRect: {fileID: 5986172488665384504}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3113,6 +3113,7 @@ MonoBehaviour:
   - Horizontal: 640
     Vertical: 480
   ResSettingDisplay: {fileID: 7269967208993710941}
+  IsLevel: 0
 --- !u!114 &737507109531672541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3863,8 +3864,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 8495713436628876948}
   m_HandleRect: {fileID: 4335697791708381}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -4978,8 +4979,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 4601752532585915982}
   m_HandleRect: {fileID: 8117070569367651226}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

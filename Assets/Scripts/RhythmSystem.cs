@@ -75,6 +75,9 @@ public class RhythmSystem : MonoBehaviour
         // See if the start or end of a joke section has been reached.
         if (song.TryGetComponent<SongStats>(out SongStats stats))
         {
+            if(stats.joke_sections.Length == 0) {
+                return;
+            }
             // This condition might not work if we skip enough frames to skip a whole beat.
             // to fix that, maybe just offset dsptimestart?
             if(stats.joke_sections[joke_section_idx][0] == (int)Math.Floor(time_in_beats)) {

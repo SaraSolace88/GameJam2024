@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     private int SelectedRes;
     public TextMeshProUGUI ResSettingDisplay;
 
+    public bool IsLevel;
+
     private void Start()
     {
         FullScreen.isOn = Screen.fullScreen;
@@ -55,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+      //  AudioSettings.dspTime
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
