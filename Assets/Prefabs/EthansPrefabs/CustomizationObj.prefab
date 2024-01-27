@@ -99,8 +99,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   StageSprites:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 9032ad7cd219263448abb8603beeb5f8, type: 3}
+  - {fileID: 21300000, guid: c0c1eb5dfb8dadb44954baae22fac825, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -25,6 +25,7 @@ public class CosmeticsSystem : MonoBehaviour
 
     [Header("List of GameObjects")]
     [SerializeField] private GameObject PlayerSprite;
+    [SerializeField] private GameObject StageSprite;
 
     public bool BLevel;
 
@@ -43,6 +44,14 @@ public class CosmeticsSystem : MonoBehaviour
             SelSkin = PlayerPrefs.GetInt("SkinNumb");
         }
         PlayerSprite.GetComponent<SpriteRenderer>().color = SkinColors[SelSkin];
+        
+
+
+        if(PlayerPrefs.HasKey("StageNumb"))
+        {
+            SelStage = PlayerPrefs.GetInt("StageNumb");
+        }
+        StageSprite.GetComponent<SpriteRenderer>().sprite = StageSprites[SelStage];
     }
 
     private void OnGUI()
@@ -167,6 +176,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelStage = 0;
         }
+        StageSprite.GetComponent<SpriteRenderer>().sprite = StageSprites[SelStage];
+        PlayerPrefs.SetInt("StageNumb", SelStage);
     }
     public void RightStage()
     {
@@ -175,5 +186,7 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelStage = StageSprites.Count - 1;
         }
+        StageSprite.GetComponent<SpriteRenderer>().sprite = StageSprites[SelStage];
+        PlayerPrefs.SetInt("StageNumb", SelStage);
     }
 }
