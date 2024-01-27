@@ -107,11 +107,6 @@ public class joke_gen : MonoBehaviour
 
         int uhh_words_progress = words_progress;
 
-        float song_time_sec = ((float)AudioSettings.dspTime - dsp_start_time);
-
-        float last_glyph_written_sec = joke_progress / glyphs_per_second;
-
-
         if (the_joke.Length - joke_progress < uhh_min+1)
         {
             return;
@@ -140,6 +135,8 @@ public class joke_gen : MonoBehaviour
 
         
         umm_str = base_uhhs[selection] + new string('.', uhh_length - uhh_min);
+
+        
     }
 
 
