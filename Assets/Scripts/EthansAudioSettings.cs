@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class AudioSettings : MonoBehaviour
+public class EthansAudioSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer MainMixer;
     [SerializeField] private Slider MasterVolumeSlider;
