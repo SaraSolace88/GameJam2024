@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class RhythmSystem : MonoBehaviour
 {
-    public PauseMenu PS; // Pause Menu Script
-
+    public PauseMenu PS;
 
     //the current position of the song (in seconds)
     private float songPos;
@@ -59,7 +58,7 @@ public class RhythmSystem : MonoBehaviour
             if (songState)
             {
                 //calculate the position in seconds
-                songPos = (float)(AudioSettings.dspTime - dspTimeStart);
+                songPos = (PS.GetAdjustedAudioTime() - dspTimeStart);
 
                 //calculate the position in beats
                 float old_beat_pos = songPosInBeats;
@@ -108,7 +107,7 @@ public class RhythmSystem : MonoBehaviour
         test = false;
         songState = true;
         //record the time when the song starts
-        dspTimeStart = (float)AudioSettings.dspTime;
+        dspTimeStart = PS.GetAdjustedAudioTime();
         //starts the song audio
         if (song.TryGetComponent<AudioSource>(out AudioSource source))
         {
