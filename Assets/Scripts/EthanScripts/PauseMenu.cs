@@ -73,9 +73,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         IsPaused = false;
     }
-    public double GetAdjustedAudioTime()
+    public float GetAdjustedAudioTime()
     {
-        return (float)AudioSettings.dspTime - audioPausedTime;
+        return (float)AudioSettings.dspTime - (float)audioPausedTime;
     }
 
     public void OpenSettings()
