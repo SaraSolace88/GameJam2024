@@ -35,6 +35,7 @@ public class joke_gen : MonoBehaviour
     bool put_space_next_update = false;
 
     bool running_joke = false;
+    bool[] used = new bool[jokes.so_many_jokes.Length];
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,9 @@ public class joke_gen : MonoBehaviour
 
             start_new_joke(joke_length_sec);
         };
-        
+
+        Array.Fill(used, false);    
+
     }
 
     void Uhhh()
@@ -140,11 +143,34 @@ public class joke_gen : MonoBehaviour
         dsp_start_time = (float)AudioSettings.dspTime;
 
         int num_of_jokes = jokes.so_many_jokes.Length;
-        System.Random rand_sys = new System.Random();
-        int joke_idx = rand_sys.Next(0, num_of_jokes);
+        //System.Random rand_sys = new System.Random();
+        //int joke_idx = rand_sys.Next(0, num_of_jokes);
+
+        
+        
+        float ideal_length = 4 * joke_length_sec; //Ideal Joke String Length
+        List<string> good_jokes = new List<string>();
+        int tolerance = 6;
+        
+        while (good_jokes.Count < 4)
+        {
+            for (int i = 0; i < jokes.so_many_jokes.Length; i++)
+            {
+                if (used[i] == false && jokes.so_many_jokes[i].Length >= ideal_length - tolerance && jokes.so_many_jokes[i].Length <= ideal_length + tolerance)
+                {
+                    good_jokes.Add(jokes.so_many_jokes[i]);
+                    used[i] = true;
+                }
+            }
+            tolerance += 1;
+        }
+
+        var rand = new System.Random();
+        int joke_idx = rand.Next(0, good_jokes.Count);
 
         // pick the joke to use.
         the_joke = jokes.so_many_jokes[joke_idx];
+
         
         // Init other variables.
         glyphs_per_second = the_joke.Length / joke_length_sec ;
