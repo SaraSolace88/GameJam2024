@@ -62,7 +62,7 @@ public class RhythmSystem : MonoBehaviour
             songPosInBeats = songPos / secPerBeat;
             SpawnNote(songPosInBeats + beatsShownInAdvance);
 
-            if((int)old_beat_pos != (int)songPosInBeats) {
+            if((int)Math.Floor(old_beat_pos) != (int)Math.Floor(songPosInBeats)) {
                 // new beat!
                 OnBeat(songPosInBeats);
             }
@@ -77,7 +77,7 @@ public class RhythmSystem : MonoBehaviour
         {
             // This condition might not work if we skip enough frames to skip a whole beat.
             // to fix that, maybe just offset dsptimestart?
-            if(stats.joke_sections[joke_section_idx][0] == (int)time_in_beats) {
+            if(stats.joke_sections[joke_section_idx][0] == (int)Math.Floor(time_in_beats)) {
                 // Notify subscribers that a new joke section has started.
                 float time_of_end_sec = secPerBeat * stats.joke_sections[joke_section_idx][1];
                 float joke_length_sec = time_of_end_sec - secPerBeat*time_in_beats;
