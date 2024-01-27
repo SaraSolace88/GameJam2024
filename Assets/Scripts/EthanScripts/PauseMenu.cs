@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     private int SelectedRes;
     public TextMeshProUGUI ResSettingDisplay;
 
+    public bool IsLevel;
+
     private void Start()
     {
         FullScreen.isOn = Screen.fullScreen;
