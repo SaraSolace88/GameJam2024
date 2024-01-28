@@ -7,12 +7,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static jokes;
-// TODO:
-// Switch between quality of jokes (3 levels)
-// [x] different uhh's.
-// Integrate with Rhythm System.
-// 
-
 
 public class joke_gen : MonoBehaviour
 {
@@ -77,12 +71,17 @@ public class joke_gen : MonoBehaviour
         // Subscribing to rhythm system things.
         RhythmSystem.OnSongStart += set_dsp_time;
         RhythmSystem.OnJokeStart += start_new_joke;
+        EndHit.HitMiss += missed_note;
     }
 
     private void OnDisable() {
         RhythmSystem.OnSongStart -= set_dsp_time;
         RhythmSystem.OnJokeStart -= start_new_joke;
+        EndHit.HitMiss -= missed_note;
+    }
 
+    void missed_note() {
+        Uhhh();
     }
 
     void Uhhh()
@@ -96,8 +95,10 @@ public class joke_gen : MonoBehaviour
         List<string> base_uhhs = new List<string>()
             {
                 "uhh",
+                "umm",
                 "...",
-                "aaa",
+                "*sigh*",
+                "aaah",
                 "bruh",
                 "your mom"
             };
@@ -146,7 +147,6 @@ public class joke_gen : MonoBehaviour
         // Only erase the joke if another joke hasn't started already.
         if(running_joke == false) {
             joke_text.text = "";
-            Debug.Log("Erasing text.");
             TextBubble.SetActive(false);
         }
     }
@@ -154,7 +154,6 @@ public class joke_gen : MonoBehaviour
 
     void start_new_joke(float joke_length_sec)
     {
-        Debug.Log("Starting new joke");
         if(running_joke == true)
         {
             Debug.Log("Starting a new joke while one is already running? Are you sure you want to do that?");
@@ -165,9 +164,7 @@ public class joke_gen : MonoBehaviour
         dsp_start_time = (float)AudioSettings.dspTime;
 
         int num_of_jokes = jokes.so_many_jokes.Length;
-        //System.Random rand_sys = new System.Random();
-        //int joke_idx = rand_sys.Next(0, num_of_jokes);
-        
+
         float ideal_length = 4 * joke_length_sec; //Ideal Joke String Length
         List<string> good_jokes = new List<string>();
         int tolerance = 6;
@@ -207,11 +204,9 @@ public class joke_gen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // if(Input.GetKeyDown("a"))
-        // {
-        //     Uhhh();
-        // }
+        if (words != null && words_progress == words.Length) {
+            running_joke = false;
+        }
 
         // If we are finished, be done.
         if ( running_joke == false || pause_sys.IsPaused == true )
