@@ -22,7 +22,7 @@ public class Scoring : MonoBehaviour
     [SerializeField] TextMeshProUGUI JokeSectionPoints;
     [SerializeField] CrowedSystem Crowed;
 
-    char Grade;
+    public char Grade;
 
     long Score;
 
