@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 //using Unity.VisualScripting.Dependencies.Sqlite; // commented out to make a build put back if needed
 using UnityEngine;
@@ -16,6 +17,8 @@ public class joke_gen : MonoBehaviour
     // GameObjects.
     [SerializeField] GameObject joke_text_obj;
     [SerializeField] private GameObject TextBubble;
+    [SerializeField] private AudioSource Speech;
+    [SerializeField] private new List<AudioClip> VoiceAudioClips;
     TMP_Text joke_text;
 
     private PauseMenu pause_sys;
@@ -159,6 +162,8 @@ public class joke_gen : MonoBehaviour
             Debug.Log("Starting a new joke while one is already running? Are you sure you want to do that?");
         }
         TextBubble.SetActive(true);
+        int I = UnityEngine.Random.Range(0, VoiceAudioClips.Count);
+        Speech.PlayOneShot(VoiceAudioClips[I]);
 
         // Record the time in seconds when the song starts (based on the number of samples of the audio processor).
         dsp_start_time = (float)AudioSettings.dspTime;

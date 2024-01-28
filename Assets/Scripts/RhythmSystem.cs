@@ -7,12 +7,14 @@ using UnityEngine.InputSystem;
 public class RhythmSystem : MonoBehaviour
 {
     public PauseMenu PS;
+
     private Controls pInput;
     [SerializeField] private float timeAfterSong;
     [SerializeField] private GameObject EndScreen;
     [SerializeField] private GameObject BGRS;
 
     private ProgressBar pb;
+    private CharacterMove CM;
 
     //the current position of the song (in seconds)
     private float songPos;
@@ -51,6 +53,7 @@ public class RhythmSystem : MonoBehaviour
     private void Awake()
     {
         pb = GetComponent<ProgressBar>();
+        CM = GetComponent<CharacterMove>();
         int song_id = PlayerPrefs.GetInt("song_id");
         if(song_prefabs.Length == 0) {
             Debug.LogError("No songs have been added to RhythmSystem!");
@@ -120,6 +123,7 @@ public class RhythmSystem : MonoBehaviour
                 {
                     // new beat!
                     OnBeat(songPosInBeats);
+                    CM.UpdatePose();
                 }
 
             }

@@ -9,16 +9,20 @@ public class TomatoesGen : MonoBehaviour
     [SerializeField] private int Amount;
     [SerializeField] private float delay;
 
-    private bool Splated;
+    public bool Tomat;
+
     private float timebetweensplats;
 
     private void Update()
     {
-        timebetweensplats += Time.deltaTime;
-        if (timebetweensplats >= 5f)
+        if (Tomat)
         {
-            Splat();
-            timebetweensplats = 0f;
+            timebetweensplats += Time.deltaTime;
+            if (timebetweensplats >= 5f)
+            {
+                Splat();
+                timebetweensplats = 0f;
+            }
         }
     }
 
