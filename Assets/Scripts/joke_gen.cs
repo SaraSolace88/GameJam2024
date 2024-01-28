@@ -21,6 +21,7 @@ public class joke_gen : MonoBehaviour
 
     // GameObjects.
     [SerializeField] GameObject joke_text_obj;
+    [SerializeField] private GameObject TextBubble;
     TMP_Text joke_text;
 
     private PauseMenu pause_sys;
@@ -147,6 +148,7 @@ public class joke_gen : MonoBehaviour
             joke_text.text = "";
             Debug.Log("Erasing text.");
         }
+        TextBubble.SetActive(false); ;
     }
 
 
@@ -157,6 +159,7 @@ public class joke_gen : MonoBehaviour
         {
             Debug.Log("Starting a new joke while one is already running? Are you sure you want to do that?");
         }
+        TextBubble.SetActive(true);
 
         // Record the time in seconds when the song starts (based on the number of samples of the audio processor).
         dsp_start_time = (float)AudioSettings.dspTime;
