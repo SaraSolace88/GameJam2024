@@ -176,7 +176,7 @@ MonoBehaviour:
   songState: 0
   test: 0
   beatsShownInAdvance: 5
-  song: {fileID: 0}
+  song_prefabs: []
 --- !u!1 &1388861804728686305
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &4147243609184670713
 Rigidbody2D:
@@ -603,7 +603,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &6803333892579001482
 Rigidbody2D:
@@ -963,7 +963,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &2181544792059459758
 Rigidbody2D:
