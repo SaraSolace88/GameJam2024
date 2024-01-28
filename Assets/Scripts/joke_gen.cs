@@ -147,8 +147,8 @@ public class joke_gen : MonoBehaviour
         if(running_joke == false) {
             joke_text.text = "";
             Debug.Log("Erasing text.");
+            TextBubble.SetActive(false);
         }
-        TextBubble.SetActive(false); ;
     }
 
 
