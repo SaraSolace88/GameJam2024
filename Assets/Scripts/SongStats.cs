@@ -5,7 +5,7 @@ public class SongStats : MonoBehaviour
     [SerializeField] private PauseMenu PS;
 
     //beats per minute of a song
-    private float bpm = 136;
+    [SerializeField] private float bpm = 136;
 
     //keep all the position-in-beats of notes in the song and collum of track.
     //Vector2(position, collum)
