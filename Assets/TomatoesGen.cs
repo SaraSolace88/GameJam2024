@@ -9,14 +9,18 @@ public class TomatoesGen : MonoBehaviour
     [SerializeField] private int Amount;
     [SerializeField] private float delay;
 
-    public bool Tomat;
+    Scoring score_sys;
 
-    private float timebetweensplats;
+    private bool Splated;
+    private float timebetweensplats = 0;
+
+    public void Start() {
+        score_sys = gameObject.GetComponent<Scoring>();
+    }
 
     private void Update()
     {
-        if (Tomat)
-        {
+        if(score_sys.Grade == 'D') {
             timebetweensplats += Time.deltaTime;
             if (timebetweensplats >= 5f)
             {
