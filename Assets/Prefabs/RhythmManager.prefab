@@ -457,7 +457,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PS: {fileID: 8341287768919670655}
+  misInput: {fileID: 0}
   note: 2
+  note1: {fileID: 1076806116491370778}
+  note2: {fileID: 8349732747236724713}
+  note3: {fileID: 4156520963581480773}
 --- !u!199 &8009746515046476981
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5801,7 +5805,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PS: {fileID: 5928818555587328541}
+  misInput: {fileID: 0}
   note: 1
+  note1: {fileID: 1076806116491370778}
+  note2: {fileID: 8349732747236724713}
+  note3: {fileID: 4156520963581480773}
 --- !u!199 &2870480090488942250
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -11103,7 +11111,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PS: {fileID: 4815285820520526565}
+  misInput: {fileID: 0}
   note: 0
+  note1: {fileID: 1076806116491370778}
+  note2: {fileID: 8349732747236724713}
+  note3: {fileID: 4156520963581480773}
 --- !u!198 &4815285820520526565
 ParticleSystem:
   m_ObjectHideFlags: 0
