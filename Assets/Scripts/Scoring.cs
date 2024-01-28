@@ -143,7 +143,7 @@ public class Scoring : MonoBehaviour
             {
                 Crowed.MoveCrowedLevel2Up();
             }
-            if(Crowed.Crowed3)
+            if(!Crowed.Crowed3)
             {
                 Crowed.MoveCrowedLevel3Up();
             }

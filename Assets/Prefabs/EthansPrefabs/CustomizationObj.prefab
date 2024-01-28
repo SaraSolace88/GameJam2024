@@ -68,6 +68,8 @@ MonoBehaviour:
   ClothsSprites:
   - {fileID: 21300000, guid: 5cd1ce2df70011c488512ec18f7afbea, type: 3}
   - {fileID: 21300000, guid: 2949b0a1a2615f841a35adf121b4a0da, type: 3}
+  - {fileID: 21300000, guid: 47276e173df219542b7970c82990b579, type: 3}
+  - {fileID: 21300000, guid: 0207bdbc730e4a84299cf485b866ff03, type: 3}
   MicSprites:
   - {fileID: 21300000, guid: 47abfce04f5b8ab4db38d400c928c39e, type: 3}
   - {fileID: 21300000, guid: cabd7ba691ce9224eb39c4d5d1b76abd, type: 3}

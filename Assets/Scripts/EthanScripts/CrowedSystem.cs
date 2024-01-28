@@ -78,8 +78,6 @@ public class CrowedSystem : MonoBehaviour
             Vector3 Direction = (StartTarget.transform.position - CrowedLevel2.transform.position).normalized;
             CrowedLevel2.GetComponent<Rigidbody2D>().velocity = Direction * 1.5f;
         }
-        if (Crowed2)
-        {
             if (C3UP)
             {
                 Vector3 Direction = (TargetC3.transform.position - CrowedLevel3.transform.position).normalized;
@@ -90,7 +88,7 @@ public class CrowedSystem : MonoBehaviour
                 Vector3 Direction = (StartTarget.transform.position - CrowedLevel3.transform.position).normalized;
                 CrowedLevel3.GetComponent<Rigidbody2D>().velocity = Direction * 1.5f;
             }
-        }
+        
         else
         {
             C3UP = false;
@@ -113,20 +111,14 @@ public class CrowedSystem : MonoBehaviour
 
     public void MoveCrowedLevel3Up()
     {
-        if (Crowed2)
-        {
             C3DOWN = false;
             C3UP = true;
-            Crowed3 = true;
-        }
+            Crowed3 = true; 
     }
     public void MoveCrowedLevel3Down()
     {
-        if (Crowed2)
-        {
             C3UP = false;
             C3DOWN = true;
             Crowed3 = false;
-        }
     }
 }
