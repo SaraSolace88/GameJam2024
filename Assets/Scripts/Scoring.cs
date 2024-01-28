@@ -115,7 +115,11 @@ public class Scoring : MonoBehaviour
         JokeSectionCalc(JokeSectionTotalNotes, JokeSectionHitNotes);
     }
     private void JokeSectionCalc(int totalNotes,int hitNotes)
-    {
+    {   
+        if(totalNotes == 0)
+        {
+            return;
+        }
         float relScore = hitNotes / totalNotes;
         if (relScore == 1)
         {
