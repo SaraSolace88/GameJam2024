@@ -11,18 +11,34 @@ public class LoadingSystem : MonoBehaviour
     [SerializeField] private GameObject LoadingScreen;
     [SerializeField] private Slider LoadingBar;
 
+    // The index into RhythmSystem.song_prefabs.
+    // This must be overwritten by a button before LoadSceneLoading is called.
+    private int song_to_play = -1;
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    public void SetSongId(int song_id) {
+        song_to_play = song_id;
+    }
+    
     public void LoadSceneLoading(string LevelToLoad)
     {
         Main.SetActive(false);
         LoadingScreen.SetActive(true);
 
+        SavingSong(song_to_play);
         StartCoroutine(LoadSceneAsync(LevelToLoad));
         Time.timeScale = 1;
     }
+
+
+    void SavingSong(int song) {
+        PlayerPrefs.SetInt("song_id", song);
+    }
+
     IEnumerator LoadSceneAsync(string LevelToLoad)
     {
         AsyncOperation loadOperatioin = SceneManager.LoadSceneAsync(LevelToLoad);

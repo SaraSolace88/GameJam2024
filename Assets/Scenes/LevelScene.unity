@@ -2636,7 +2636,19 @@ PrefabInstance:
     - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: song
       value: 
-      objectReference: {fileID: 532597272}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: song_prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: song_prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2002631816277070184, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: song_prefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2002631816277070184, guid: 05e9ceffebb04ca4ebcbea60ccd31e92, type: 3}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

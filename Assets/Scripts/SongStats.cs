@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SongStats : MonoBehaviour
 {
-    [SerializeField] private PauseMenu PS;
+    private PauseMenu PS;
     [SerializeField] private int Offst;
 
     //beats per minute of a song
@@ -30,6 +30,12 @@ public class SongStats : MonoBehaviour
     private bool paused;
 
     private GameObject rhythmSystem;
+
+    private void Start() {
+
+        // Please don't fire me.
+        PS = GameObject.Find("SceneLoaderObject(PutOneInEachScene)").GetComponent<PauseMenu>();
+    }
 
     private void OnEnable()
     {
