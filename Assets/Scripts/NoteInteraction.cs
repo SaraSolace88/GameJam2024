@@ -69,6 +69,7 @@ public class NoteInteraction : MonoBehaviour
                 holdNote = true;
             }
         }
+        //StartCoroutine(nameof(holdNote));
         collision.GetComponent<GameActionSequence>().Play();
     }
 
@@ -122,10 +123,16 @@ public class NoteInteraction : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(.1f);
+
         if (!noteHit)
         {
-
+            Debug.Log("miss");
+            if (misInput)
+            {
+                misInput.Play();
+            }
         }
+
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
