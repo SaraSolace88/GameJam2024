@@ -1000,6 +1000,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483524160}
   m_CullTransparentMesh: 1
+--- !u!1 &532597272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2002631816277070184, guid: 51113253b2b16e143be7226112497dbd, type: 3}
+  m_PrefabInstance: {fileID: 323920145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &571187772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2636,7 @@ PrefabInstance:
     - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: song
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 532597272}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

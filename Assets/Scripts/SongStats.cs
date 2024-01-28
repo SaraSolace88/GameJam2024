@@ -66,27 +66,27 @@ public class SongStats : MonoBehaviour
             if(notes[nextIndex].y - 1 == 0)
             {
                 GameObject tmp = Instantiate(musicNote);
-                tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).GetChild(0).transform.position;
                 tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
             if(notes[nextIndex].y - 1 == 1)
             {
                 GameObject tmp1 = Instantiate(musicNote);
                 tmp1.gameObject.GetComponent<SpriteRenderer>().sprite = MusicNote2;
-                tmp1.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                tmp1.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).GetChild(0).transform.position;
                 tmp1.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
             if(notes[nextIndex].y - 1 == 2)
             {
                 GameObject tmp2 = Instantiate(musicNote);
                 tmp2.gameObject.GetComponent<SpriteRenderer>().sprite = MusicNote3;
-                tmp2.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                tmp2.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y).GetChild(0).transform.position;
                 tmp2.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp2.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp2.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
         }
