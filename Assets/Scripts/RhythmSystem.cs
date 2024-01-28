@@ -1,9 +1,18 @@
 using System;
+//using Unity.VisualScripting; // commented out to make a build put back if needed
+//using UnityEditor.Experimental.GraphView; // commented out to make a build put back if needed
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RhythmSystem : MonoBehaviour
 {
     public PauseMenu PS;
+    private Controls pInput;
+    [SerializeField] private float timeAfterSong;
+    [SerializeField] private GameObject EndScreen;
+    [SerializeField] private GameObject BGRS;
+
+    private ProgressBar pb;
 
     //the current position of the song (in seconds)
     private float songPos;
@@ -41,6 +50,7 @@ public class RhythmSystem : MonoBehaviour
 
     private void Awake()
     {
+        pb = GetComponent<ProgressBar>();
         int song_id = PlayerPrefs.GetInt("song_id");
         if(song_prefabs.Length == 0) {
             Debug.LogError("No songs have been added to RhythmSystem!");
@@ -56,6 +66,25 @@ public class RhythmSystem : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        pInput = new Controls();
+        pInput.Enable();
+        pInput.Player.Start.performed += ButtonPressed;
+    }
+    private void OnDisable()
+    {
+        pInput.Player.Start.performed -= ButtonPressed;
+    }
+
+    private void ButtonPressed(InputAction.CallbackContext c)
+    {
+        if (!songState)
+        {
+            StartSong();
+        }
+    }
+
     private void Update()
     {
         if (!PS.IsPaused)
@@ -68,6 +97,12 @@ public class RhythmSystem : MonoBehaviour
             if (songState)
             {
                 //calculate the position in seconds
+                if(pb.progressValue >= 1)
+                {
+                    Invoke("EndSong", timeAfterSong);
+                    songState = false;
+                }
+
                 songPos = (PS.GetAdjustedAudioTime() - dspTimeStart);
 
                 //calculate the position in beats
@@ -110,6 +145,13 @@ public class RhythmSystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void EndSong()
+    {
+        BGRS.SetActive(true);
+        EndScreen.SetActive(true);
+        PS.End();
     }
 
     private void StartSong()

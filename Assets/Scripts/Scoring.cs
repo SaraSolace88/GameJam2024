@@ -14,6 +14,9 @@ public enum NoteScore
 public class Scoring : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] TextMeshProUGUI ScoreText1;
+    [SerializeField] TextMeshProUGUI LetterGradeText;
+    [SerializeField] TextMeshProUGUI LetterGrade1Text;
 
     char Grade;
 
@@ -30,6 +33,9 @@ public class Scoring : MonoBehaviour
     private void OnGUI()
     {
         ScoreText.text = Score.ToString();
+        ScoreText1.text = Score.ToString();
+        LetterGradeText.text = Grade.ToString();
+        LetterGrade1Text.text = Grade.ToString();
     }
     private void UpdateGrade()
     {

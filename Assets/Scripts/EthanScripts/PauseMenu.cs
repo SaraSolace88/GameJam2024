@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -20,6 +22,8 @@ public class PauseMenu : MonoBehaviour
     public bool IsLevel;
     private double pauseStartTime;
     private double audioPausedTime;
+
+    private Controls pInput;
 
     private void Start()
     {
@@ -53,6 +57,28 @@ public class PauseMenu : MonoBehaviour
             SelectedRes = Resolutions.Count - 1;
         }
     }
+
+    private void OnEnable()
+    {
+        pInput = new Controls();
+        pInput.Enable();
+        pInput.Player.Pause.performed += ButtonPressed;
+    }
+    private void OnDisable()
+    {
+        pInput.Player.Pause.performed -= ButtonPressed;
+    }
+     private void ButtonPressed(InputAction.CallbackContext c)
+    {
+        if (IsPaused)
+        {
+            Pause();
+        }
+        else
+        {
+            Resume();
+        }
+    }
     private void OnGUI()
     {
         ResSettingDisplay.text = Resolutions[SelectedRes].Horizontal.ToString() + " X " + Resolutions[SelectedRes].Vertical.ToString();
@@ -61,6 +87,13 @@ public class PauseMenu : MonoBehaviour
     {
         pauseStartTime = AudioSettings.dspTime;
         PausePanel.SetActive(true);
+        Time.timeScale = 0f;
+        IsPaused = true;
+    }
+
+    public void End()
+    {
+        pauseStartTime = AudioSettings.dspTime;
         Time.timeScale = 0f;
         IsPaused = true;
     }

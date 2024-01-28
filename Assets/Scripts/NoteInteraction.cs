@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class NoteInteraction : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem PS;
+
     public ComponentType note;
     private Controls pInput;
 
@@ -71,6 +73,7 @@ public class NoteInteraction : MonoBehaviour
     private void ButtonPressed(InputAction.CallbackContext c)
     {
         StartCoroutine(nameof(EnableCollider));
+        PS.Play();
     }
 
     private void ButtonReleased(InputAction.CallbackContext c)
