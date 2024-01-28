@@ -66,7 +66,6 @@ public class SongStats : MonoBehaviour
 
     private void SpawnNote(float beats)
     {
-        Debug.Log(gameObject);
         if(nextIndex < notes.Length && notes[nextIndex].x+Offst < beats)
         {
             if(notes[nextIndex].y - 1 == 0)
