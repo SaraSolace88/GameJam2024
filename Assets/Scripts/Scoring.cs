@@ -111,7 +111,6 @@ public class Scoring : MonoBehaviour
             
         }
         Score += NoteHitScore;
-        Debug.Log(NoteHitScore);
         UpdateGrade();
     }
 
@@ -123,13 +122,12 @@ public class Scoring : MonoBehaviour
     void EndJokeSection()
     {
         JokeSection = false;
+        JokeSectionCalc(JokeSectionTotalNotes, JokeSectionHitNotes);
         JokeSectionTotalNotes = 0;
         JokeSectionHitNotes = 0;
-        JokeSectionCalc(JokeSectionTotalNotes, JokeSectionHitNotes);
     }
     private void JokeSectionCalc(int totalNotes,int hitNotes)
-    {   
-        
+    {
         if(totalNotes == 0)
         {
             return;
@@ -138,31 +136,26 @@ public class Scoring : MonoBehaviour
         if (JokeSectionPercent == 1)
         {
             JokeSectionPointsEarned = hitNotes * 1000;
-            Debug.Log("Scoring");
             Crowed.PlayEmotes(3);
         }
         else if (JokeSectionPercent >= .90)
         {
             JokeSectionPointsEarned = hitNotes * 800;
-            Debug.Log("Scoring");
             Crowed.PlayEmotes(3);
         }
         else if (JokeSectionPercent >= .80)
         {
             JokeSectionPointsEarned = hitNotes * 700;
-            Debug.Log("Scoring");
             Crowed.PlayEmotes(2);
         }
         else if (JokeSectionPercent >= .70)
         {
             JokeSectionPointsEarned = hitNotes * 500;
-            Debug.Log("Scoring");
             Crowed.PlayEmotes(2);
         }
         else if (JokeSectionPercent <= .50)
         {
             JokeSectionPointsEarned = 0;
-            Debug.Log("Scoring");
             Crowed.PlayEmotes(1);
         }
         

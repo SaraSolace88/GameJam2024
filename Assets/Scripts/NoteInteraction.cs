@@ -126,7 +126,6 @@ public class NoteInteraction : MonoBehaviour
 
         if (!noteHit)
         {
-            Debug.Log("miss");
             if (misInput)
             {
                 misInput.Play();

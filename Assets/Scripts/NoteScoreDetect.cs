@@ -23,7 +23,6 @@ public class MissingCollision : GameAction
         {
             HitType = NoteScore.Bad;
         }
-        Debug.Log(HitType);
         Hit(HitType);
     }
 
