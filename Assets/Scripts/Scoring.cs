@@ -18,7 +18,7 @@ public class Scoring : MonoBehaviour
     [SerializeField] TextMeshProUGUI ScoreText1;
     [SerializeField] TextMeshProUGUI LetterGradeText;
     [SerializeField] TextMeshProUGUI LetterGrade1Text;
-    [SerializeField] GameObject Crowed;
+    [SerializeField] CrowedSystem Crowed;
 
     char Grade;
 
@@ -137,22 +137,32 @@ public class Scoring : MonoBehaviour
         if (JokeSectionPercent == 1)
         {
             JokeSectionPointsEarned = hitNotes * 1000;
+            Debug.Log("Scoring");
+            Crowed.PlayEmotes(3);
         }
         else if (JokeSectionPercent >= .90)
         {
             JokeSectionPointsEarned = hitNotes * 800;
+            Debug.Log("Scoring");
+            Crowed.PlayEmotes(3);
         }
         else if (JokeSectionPercent >= .80)
         {
             JokeSectionPointsEarned = hitNotes * 700;
+            Debug.Log("Scoring");
+            Crowed.PlayEmotes(2);
         }
         else if (JokeSectionPercent >= .70)
         {
             JokeSectionPointsEarned = hitNotes * 500;
+            Debug.Log("Scoring");
+            Crowed.PlayEmotes(2);
         }
         else if (JokeSectionPercent <= .50)
         {
             JokeSectionPointsEarned = 0;
+            Debug.Log("Scoring");
+            Crowed.PlayEmotes(1);
         }
         
 
