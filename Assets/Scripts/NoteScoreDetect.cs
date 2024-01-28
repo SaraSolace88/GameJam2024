@@ -10,7 +10,20 @@ public class MissingCollision : GameAction
     public static Action<NoteScore> Hit = delegate { };
    
     public override void Action()
-    {   
+    {
+        string type = gameObject.tag;
+        if(type == "Perfect")
+        {
+            HitType = NoteScore.Perfect;
+        }else if (type == "Good")
+        {
+            HitType = NoteScore.Good;
+        }
+        else if (type == "Bad")
+        {
+            HitType = NoteScore.Bad;
+        }
+        Debug.Log(HitType);
         Hit(HitType);
     }
 

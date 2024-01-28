@@ -7,6 +7,9 @@ TagManager:
   - RhythmManager
   - SceneLoader
   - Song
+  - Bad
+  - Good
+  - Perfect
   layers:
   - Default
   - TransparentFX

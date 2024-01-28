@@ -30,6 +30,10 @@ public class Scoring : MonoBehaviour
 
     int JokeSectionHitNotes;
 
+    public long JokeSectionPointsEarned;
+
+    public long JokeSectionPercent;
+
     private void OnGUI()
     {
         ScoreText.text = Score.ToString();
@@ -45,7 +49,6 @@ public class Scoring : MonoBehaviour
             return;
         }
         float relScore = (float)Score / (float)MaxScore;
-        Debug.Log(relScore);
         if (relScore == 1)
         {
             Grade = 'S';
@@ -73,20 +76,20 @@ public class Scoring : MonoBehaviour
 
         //For different note hits
         int NoteHitScore = 0;
-        if(noteScore != NoteScore.Miss)
+        if(noteScore == NoteScore.Miss)
         {
             NoteHitScore += 100;
         }
         else if(noteScore == NoteScore.Perfect)
         {
-            MaxScore += 100;
+            NoteHitScore += 100;
         }else if (noteScore == NoteScore.Good)
         {
-            MaxScore += 80;
+            NoteHitScore += 80;
         }
         else if (noteScore == NoteScore.Bad)
         {
-            MaxScore += 50;
+            NoteHitScore += 50;
         }
       
         MaxScore += 100;
@@ -116,33 +119,37 @@ public class Scoring : MonoBehaviour
     }
     private void JokeSectionCalc(int totalNotes,int hitNotes)
     {   
+        
         if(totalNotes == 0)
         {
             return;
         }
-        float relScore = hitNotes / totalNotes;
-        if (relScore == 1)
+        float JokeSectionPercent = hitNotes / totalNotes;
+        if (JokeSectionPercent == 1)
         {
-            Score += hitNotes * 1000;
+            JokeSectionPointsEarned = hitNotes * 1000;
         }
-        else if (relScore >= .90)
+        else if (JokeSectionPercent >= .90)
         {
-            Score += hitNotes * 800;
+            JokeSectionPointsEarned = hitNotes * 800;
         }
-        else if (relScore >= .80)
+        else if (JokeSectionPercent >= .80)
         {
-            Score += hitNotes * 700;
+            JokeSectionPointsEarned = hitNotes * 700;
         }
-        else if (relScore >= .70)
+        else if (JokeSectionPercent >= .70)
         {
-            Score += hitNotes * 500;
+            JokeSectionPointsEarned = hitNotes * 500;
         }
-        else if (relScore <= .50)
+        else if (JokeSectionPercent <= .50)
         {
-            Score += 0;
+            JokeSectionPointsEarned = 0;
         }
+        
+
 
         MaxScore += totalNotes * 1000;
+        Score += JokeSectionPointsEarned;
         UpdateGrade();
     }
     // Start is called before the first frame update

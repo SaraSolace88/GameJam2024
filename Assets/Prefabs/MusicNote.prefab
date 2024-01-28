@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6157923897084813555}
   m_Layer: 0
   m_Name: Good
-  m_TagString: Untagged
+  m_TagString: Perfect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 410169035974941082}
   m_Layer: 0
   m_Name: Mediocre
-  m_TagString: Untagged
+  m_TagString: Good
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,10 +443,9 @@ GameObject:
   - component: {fileID: 328411197416308142}
   - component: {fileID: 2883303477653824878}
   - component: {fileID: 7320286575832975593}
-  - component: {fileID: 7231368750907779440}
   m_Layer: 0
   m_Name: Bad
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,17 +585,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.125}
   m_EdgeRadius: 0
---- !u!114 &7231368750907779440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5965256287101589065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356191c5d73e0eb47852663d05e12a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionList:
-  - {fileID: 0}
