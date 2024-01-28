@@ -86,7 +86,8 @@ public class SongStats : MonoBehaviour
                 tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offset);
                 tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
-            }else if(notes[nextIndex].y - 1 == 1)
+            }
+            else if(notes[nextIndex].y - 1 == 1)
             {
                 GameObject tmp1 = Instantiate(musicNote);
                 tmp1.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote2;
@@ -94,7 +95,8 @@ public class SongStats : MonoBehaviour
                 tmp1.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offset);
                 tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
-            }else if(notes[nextIndex].y - 1 == 2)
+            }
+            else if(notes[nextIndex].y - 1 == 2)
             {
                 GameObject tmp2 = Instantiate(musicNote);
                 tmp2.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote3;

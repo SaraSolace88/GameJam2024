@@ -261,7 +261,6 @@ public class joke_gen : MonoBehaviour
             {
                 running_joke = false;
                 StartCoroutine(JokeGoAway());
-                Debug.Log("Starting timout timer!");
             }
         }
     }
