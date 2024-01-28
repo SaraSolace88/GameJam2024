@@ -16,8 +16,9 @@ public class SongStats : MonoBehaviour
     private int nextIndex = 0;
 
     [SerializeField] private GameObject musicNote;
-    [SerializeField] private GameObject musicNote1;
-    [SerializeField] private GameObject musicNote2;
+
+    [SerializeField] private Sprite MusicNote2;
+    [SerializeField] private Sprite MusicNote3;
 
     // Array of joke section start and end times in beats.
     /* [
@@ -59,6 +60,7 @@ public class SongStats : MonoBehaviour
 
     private void SpawnNote(float beats)
     {
+        Debug.Log(gameObject);
         if(nextIndex < notes.Length && notes[nextIndex].x+Offst < beats)
         {
             if(notes[nextIndex].y - 1 == 0)
@@ -71,7 +73,8 @@ public class SongStats : MonoBehaviour
             }
             if(notes[nextIndex].y - 1 == 1)
             {
-                GameObject tmp1 = Instantiate(musicNote1);
+                GameObject tmp1 = Instantiate(musicNote);
+                tmp1.gameObject.GetComponent<SpriteRenderer>().sprite = MusicNote2;
                 tmp1.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
                 tmp1.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
                 tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
@@ -79,7 +82,8 @@ public class SongStats : MonoBehaviour
             }
             if(notes[nextIndex].y - 1 == 2)
             {
-                GameObject tmp2 = Instantiate(musicNote2);
+                GameObject tmp2 = Instantiate(musicNote);
+                tmp2.gameObject.GetComponent<SpriteRenderer>().sprite = MusicNote3;
                 tmp2.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
                 tmp2.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
                 tmp2.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);

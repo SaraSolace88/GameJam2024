@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PS: {fileID: 0}
+  Offst: 0
+  bpm: 136
   notes:
   - {x: 5, y: 1}
   - {x: 6, y: 1}
@@ -477,8 +479,8 @@ MonoBehaviour:
   - {x: 241, y: 2}
   - {x: 241, y: 3}
   musicNote: {fileID: 5864018117808469488, guid: 20dda02da31fb7945bbdb2e4c73e3a56, type: 3}
-  musicNote1: {fileID: 5864018117808469488, guid: 9e36dde0b005d524cb1f39930ed8c350, type: 3}
-  musicNote2: {fileID: 5864018117808469488, guid: d36da97d243e446408f8fe8b3d322124, type: 3}
+  MusicNote2: {fileID: 21300000, guid: b89292cda6b55b54ba3eb400c0fc889c, type: 3}
+  MusicNote3: {fileID: 21300000, guid: f6a47fe22344e0640b61aa8c9f8344bf, type: 3}
   joke_sections: []
 --- !u!82 &8195788049932777722
 AudioSource:

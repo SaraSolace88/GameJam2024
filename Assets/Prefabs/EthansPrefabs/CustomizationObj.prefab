@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 678f7bf880ab29247a25ea59a507ae6f, type: 3}
   - {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
   - {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: c750eaf87d4256c40aec5bb3c79557f9, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   - {r: 0.509434, g: 0.07929869, b: 0.13344689, a: 1}
   - {r: 0.44228956, g: 0.49056602, b: 0.4188323, a: 1}
   ClothsSprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 1284436d679d1534aa41737860068efc, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

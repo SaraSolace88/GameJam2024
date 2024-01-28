@@ -28,6 +28,7 @@ public class CosmeticsSystem : MonoBehaviour
     [SerializeField] private GameObject StageSprite;
     [SerializeField] private GameObject MicSprite;
     [SerializeField] private GameObject HeadSprite;
+    [SerializeField] private GameObject ClothsSprite;
 
     public bool BLevel;
 
@@ -53,6 +54,12 @@ public class CosmeticsSystem : MonoBehaviour
             SelSkin = PlayerPrefs.GetInt("SkinNumb");
         }
         PlayerSprite.GetComponent<SpriteRenderer>().color = SkinColors[SelSkin];
+
+        if (PlayerPrefs.HasKey("ClothsNumb"))
+        {
+            SelCloths = PlayerPrefs.GetInt("ClothsNumb");
+        }
+        ClothsSprite.GetComponent<SpriteRenderer>().sprite = ClothsSprites[SelCloths];
 
         if (PlayerPrefs.HasKey("MicNumb"))
         {
@@ -146,6 +153,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelCloths = 0;
         }
+        ClothsSprite.GetComponent<SpriteRenderer>().sprite = ClothsSprites[SelCloths];
+        PlayerPrefs.SetInt("ClothsHead", SelCloths);
     }
     public void RightCloth()
     {
@@ -154,6 +163,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelCloths = ClothsSprites.Count - 1;
         }
+        ClothsSprite.GetComponent<SpriteRenderer>().sprite = ClothsSprites[SelCloths];
+        PlayerPrefs.SetInt("ClothsHead", SelCloths);
     }
     public void LeftMic()
     {
