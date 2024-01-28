@@ -26,7 +26,13 @@ public class Scoring : MonoBehaviour
 
     private void UpdateGrade()
     {
-        float relScore = MaxScore / Score;
+        if (Score == 0 && MaxScore == 0)
+        {
+            Grade = 'S';
+            return;
+        }
+        float relScore = (float)Score / (float)MaxScore;
+        Debug.Log(relScore);
         if (relScore == 1)
         {
             Grade = 'S';
@@ -138,7 +144,7 @@ public class Scoring : MonoBehaviour
             EndJokeSection();
         };
 
-        MissingCollision.HitMiss += delegate ()
+        EndHit.HitMiss += delegate ()
         {
             NoteCalc(NoteScore.Miss);
         };
