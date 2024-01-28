@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SongStats : MonoBehaviour
 {
-    [SerializeField] private PauseMenu PS;
+    private PauseMenu PS;
     [SerializeField] private int Offst;
 
     //beats per minute of a song
@@ -16,8 +16,9 @@ public class SongStats : MonoBehaviour
     private int nextIndex = 0;
 
     [SerializeField] private GameObject musicNote;
-    [SerializeField] private GameObject musicNote1;
-    [SerializeField] private GameObject musicNote2;
+
+    [SerializeField] private Sprite MusicNote2;
+    [SerializeField] private Sprite MusicNote3;
 
     // Array of joke section start and end times in beats.
     /* [
@@ -29,6 +30,12 @@ public class SongStats : MonoBehaviour
     private bool paused;
 
     private GameObject rhythmSystem;
+
+    private void Start() {
+
+        // Please don't fire me.
+        PS = GameObject.Find("SceneLoaderObject(PutOneInEachScene)").GetComponent<PauseMenu>();
+    }
 
     private void OnEnable()
     {
@@ -64,25 +71,27 @@ public class SongStats : MonoBehaviour
             if(notes[nextIndex].y - 1 == 0)
             {
                 GameObject tmp = Instantiate(musicNote);
-                tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                tmp.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y-1).GetChild(0).transform.position;
                 tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
             if(notes[nextIndex].y - 1 == 1)
             {
-                GameObject tmp1 = Instantiate(musicNote1);
-                tmp1.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                GameObject tmp1 = Instantiate(musicNote);
+                tmp1.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote2;
+                tmp1.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y-1).GetChild(0).transform.position;
                 tmp1.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
             if(notes[nextIndex].y - 1 == 2)
             {
-                GameObject tmp2 = Instantiate(musicNote2);
-                tmp2.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y - 1).GetChild(0).transform.position;
+                GameObject tmp2 = Instantiate(musicNote);
+                tmp2.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote3;
+                tmp2.transform.position = GameObject.FindWithTag("RhythmManager").transform.GetChild((int)notes[nextIndex].y-1).GetChild(0).transform.position;
                 tmp2.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offst);
-                tmp2.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y);
+                tmp2.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
             }
         }

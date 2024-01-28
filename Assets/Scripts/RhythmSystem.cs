@@ -22,7 +22,9 @@ public class RhythmSystem : MonoBehaviour
     public int beatsShownInAdvance;
 
     //prefab called song that holds audio to play and songstats
-    [SerializeField] private GameObject song;
+    private GameObject song;
+
+    [SerializeField] private GameObject[] song_prefabs;
 
     //check if next note should be spawned
     public static Action<float> SpawnNote = delegate { };
@@ -38,6 +40,13 @@ public class RhythmSystem : MonoBehaviour
 
     private void Start()
     {
+        int song_id = PlayerPrefs.GetInt("song_id");
+        if(song_prefabs.Length == 0) {
+            Debug.LogError("No songs have been added to RhythmSystem!");
+        }
+        song = Instantiate(song_prefabs[song_id]);
+        
+     
         //calculate how many seconds is one beat
         //we will see the declaration of bpm later
         if (song.TryGetComponent<SongStats>(out SongStats stats))
