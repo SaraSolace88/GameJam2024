@@ -5918,6 +5918,10 @@ PrefabInstance:
       value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 1486803603846034862, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: Crowed
+      value: 
+      objectReference: {fileID: 6376641369198497669}
+    - target: {fileID: 1486803603846034862, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: ScoreText
       value: 
       objectReference: {fileID: 1138902865}
@@ -6464,6 +6468,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 650308976407349265, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 710812635141110490, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -6480,9 +6488,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.66
       objectReference: {fileID: 0}
+    - target: {fileID: 1726099966256228662, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2465327115590583198, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
       propertyPath: m_Name
       value: Crowed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2898184551915599825, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3096951106535649460, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6492,6 +6508,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.92
       objectReference: {fileID: 0}
+    - target: {fileID: 5858239489969482435, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: CrowedPSMid
+      value: 
+      objectReference: {fileID: 6376641369198497667}
+    - target: {fileID: 5858239489969482435, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: CrowedPSAngry
+      value: 
+      objectReference: {fileID: 6376641369198497666}
+    - target: {fileID: 5858239489969482435, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+      propertyPath: CrowedPSHappy
+      value: 
+      objectReference: {fileID: 6376641369198497668}
     - target: {fileID: 6470581032661707554, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -6547,6 +6575,32 @@ PrefabInstance:
       addedObject: {fileID: 122668446}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+--- !u!198 &6376641369198497666 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7284075109926324784, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+  m_PrefabInstance: {fileID: 6376641369198497664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6376641369198497667 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2690433484405609935, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+  m_PrefabInstance: {fileID: 6376641369198497664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6376641369198497668 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6172821366132736489, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+  m_PrefabInstance: {fileID: 6376641369198497664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6376641369198497669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5858239489969482435, guid: 030b6c4a3f181194a9a0b995978a98b8, type: 3}
+  m_PrefabInstance: {fileID: 6376641369198497664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417743dd51305984fa18b8abb0ae0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

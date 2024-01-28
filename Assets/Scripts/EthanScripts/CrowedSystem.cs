@@ -18,15 +18,16 @@ public class CrowedSystem : MonoBehaviour
     [SerializeField] private GameObject TargetC2;
     [SerializeField] private GameObject TargetC3;
 
-    private bool C2UP;
-    private bool C2DOWN;
-    private bool C3UP;
-    private bool C3DOWN;
+    public bool C2UP;
+    public bool C2DOWN;
+    public bool C3UP;
+    public bool C3DOWN;
 
     public bool Crowed2;
 
     public void PlayEmotes(int CrowedHappyness)
     {
+        Debug.Log("Playing");
         if(CrowedHappyness == 3)
         {
             CrowedPSHappy.Play();
