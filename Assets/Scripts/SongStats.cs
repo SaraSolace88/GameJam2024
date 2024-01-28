@@ -40,7 +40,7 @@ public class SongStats : MonoBehaviour
 
     private void Awake()
     {
-        //TotalBeats = notes[notes.Length-1].x;
+        TotalBeats = notes[notes.Length-1].x;
     }
 
     private void Start() {
@@ -86,8 +86,7 @@ public class SongStats : MonoBehaviour
                 tmp.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offset);
                 tmp.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
-            }
-            if(notes[nextIndex].y - 1 == 1)
+            }else if(notes[nextIndex].y - 1 == 1)
             {
                 GameObject tmp1 = Instantiate(musicNote);
                 tmp1.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote2;
@@ -95,8 +94,7 @@ public class SongStats : MonoBehaviour
                 tmp1.GetComponent<NoteMovement>().SetBOTN(notes[nextIndex].x+Offset);
                 tmp1.GetComponent<NoteMovement>().SetCollum((int)notes[nextIndex].y-1);
                 nextIndex++;
-            }
-            if(notes[nextIndex].y - 1 == 2)
+            }else if(notes[nextIndex].y - 1 == 2)
             {
                 GameObject tmp2 = Instantiate(musicNote);
                 tmp2.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = MusicNote3;
@@ -129,7 +127,10 @@ public class SongStats : MonoBehaviour
             tmp.GetComponent<NoteMovement>().SetCollum((int)heldNotes[heldNextIndex].z - 1);
             tmp.GetComponent<NoteMovement>().heldNote = true;
             tmp.GetComponent<NoteMovement>().beatOfTrail = heldNotes[heldNextIndex].y + Offset;
-            tmp.transform.GetChild(0).GetComponent<SpriteRenderer>().size = new Vector2(.5f, heldNotes[heldNextIndex].y);
+            tmp.transform.GetChild(0).GetComponent<SpriteRenderer>().size = new Vector2(.5f, heldNotes[heldNextIndex].y 
+            * GameObject.FindGameObjectWithTag("RhythmManager").GetComponent<RhythmSystem>().beatsShownInAdvance 
+            / (GameObject.FindGameObjectWithTag("RhythmManager").transform.GetChild(0).transform.GetChild(0).transform.position.y 
+            - GameObject.FindGameObjectWithTag("RhythmManager").transform.GetChild(0).transform.GetChild(1).transform.position.y));
 
             heldNextIndex++;
         }
