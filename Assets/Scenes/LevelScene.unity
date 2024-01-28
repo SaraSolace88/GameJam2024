@@ -4039,6 +4039,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4591999442459035840, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591999442459035840, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Size.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591999442459035840, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9742627460df7ac47aa557fe8a821175, type: 3}
+    - target: {fileID: 4591999442459035840, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6731651399120271502, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
       propertyPath: m_Name
       value: Customizable
@@ -4773,7 +4789,7 @@ PrefabInstance:
     - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: HeadSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
+      objectReference: {fileID: 21300000, guid: 9742627460df7ac47aa557fe8a821175, type: 3}
     - target: {fileID: 5209286177658469054, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: m_Name
       value: CustomizationObj
@@ -5761,8 +5777,12 @@ PrefabInstance:
       objectReference: {fileID: 950624808}
     - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: song_prefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+      propertyPath: song_prefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2002631816277070184, guid: 807f36333f9403547af4350b14ab1a5d, type: 3}
     - target: {fileID: 4768297606459264063, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: ProgressSlider
       value: 

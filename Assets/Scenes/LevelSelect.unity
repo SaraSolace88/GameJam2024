@@ -370,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: HeadSprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
+      objectReference: {fileID: 21300000, guid: 9742627460df7ac47aa557fe8a821175, type: 3}
     - target: {fileID: 5209286177658469054, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: m_Name
       value: CustomizationObj (1)
