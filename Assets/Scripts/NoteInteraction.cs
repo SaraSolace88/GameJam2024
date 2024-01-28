@@ -7,6 +7,8 @@ public class NoteInteraction : MonoBehaviour
     public ComponentType note;
     private Controls pInput;
 
+    private bool holdNote;
+
     private void Start()
     {
         pInput = new Controls();
@@ -15,15 +17,18 @@ public class NoteInteraction : MonoBehaviour
         if (note == ComponentType.noteA)
         {
             pInput.Player.NoteA.performed += ButtonPressed;
+            pInput.Player.NoteA.canceled += ButtonReleased;
         }
         else if (note == ComponentType.noteB)
         {
             pInput.Player.NoteB.performed += ButtonPressed;
+            pInput.Player.NoteB.canceled += ButtonReleased;
 
         }
         else if (note == ComponentType.noteC)
         {
             pInput.Player.NoteC.performed += ButtonPressed;
+            pInput.Player.NoteC.canceled += ButtonReleased;
         }
     }
     
@@ -33,20 +38,33 @@ public class NoteInteraction : MonoBehaviour
         if (note == ComponentType.noteA)
         {
             pInput.Player.NoteA.performed -= ButtonPressed;
+            pInput.Player.NoteA.canceled -= ButtonReleased;
         }
         else if (note == ComponentType.noteB)
         {
             pInput.Player.NoteB.performed -= ButtonPressed;
-
+            pInput.Player.NoteB.canceled -= ButtonReleased;
         }
         else if (note == ComponentType.noteC)
         {
             pInput.Player.NoteC.performed -= ButtonPressed;
+            pInput.Player.NoteC.canceled -= ButtonReleased;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "HoldNote")
+        {
+            if (holdNote)
+            {
+                holdNote = false;
+            }
+            else
+            {
+                holdNote = true;
+            }
+        }
         collision.GetComponent<GameActionSequence>().Play();
     }
 
@@ -55,6 +73,13 @@ public class NoteInteraction : MonoBehaviour
         StartCoroutine(nameof(EnableCollider));
     }
 
+    private void ButtonReleased(InputAction.CallbackContext c)
+    {
+        if (holdNote)
+        {
+            StartCoroutine(nameof(EnableCollider));
+        }
+    }
 
     IEnumerator EnableCollider()
     {
