@@ -24,7 +24,7 @@ public class CrowedSystem : MonoBehaviour
     public bool C3DOWN;
 
     public bool Crowed2;
-
+    public bool Crowed3;
     public void PlayEmotes(int CrowedHappyness)
     {
         Debug.Log("Playing");
@@ -117,6 +117,7 @@ public class CrowedSystem : MonoBehaviour
         {
             C3DOWN = false;
             C3UP = true;
+            Crowed3 = true;
         }
     }
     public void MoveCrowedLevel3Down()
@@ -125,6 +126,7 @@ public class CrowedSystem : MonoBehaviour
         {
             C3UP = false;
             C3DOWN = true;
+            Crowed3 = false;
         }
     }
 }

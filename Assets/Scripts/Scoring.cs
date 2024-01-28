@@ -139,21 +139,73 @@ public class Scoring : MonoBehaviour
         {
             JokeSectionPointsEarned = hitNotes * 1000;
             Crowed.PlayEmotes(3);
+            if (Crowed.Crowed2)
+            {
+                if (Crowed.Crowed3)
+                {
+                    return;
+                }
+                else
+                {
+                    Crowed.MoveCrowedLevel3Up();
+                }
+            }
+            else
+            {
+                Crowed.MoveCrowedLevel2Up();
+            }
         }
         else if (JokeSectionPercent >= .90)
         {
             JokeSectionPointsEarned = hitNotes * 800;
             Crowed.PlayEmotes(3);
+            if (Crowed.Crowed2)
+            {
+                if (Crowed.Crowed3)
+                {
+                    return;
+                }
+                else
+                {
+                    Crowed.MoveCrowedLevel3Up();
+                }
+            }
+            else
+            {
+                Crowed.MoveCrowedLevel2Up();
+            }
         }
         else if (JokeSectionPercent >= .80)
         {
             JokeSectionPointsEarned = hitNotes * 700;
             Crowed.PlayEmotes(2);
+            if (Crowed.Crowed2)
+            {
+                if (Crowed.Crowed3)
+                {
+                    Crowed.MoveCrowedLevel3Down();
+                }
+            }
+            else
+            {
+                Crowed.MoveCrowedLevel2Up();
+            }
         }
         else if (JokeSectionPercent >= .70)
         {
             JokeSectionPointsEarned = hitNotes * 500;
             Crowed.PlayEmotes(2);
+            if (Crowed.Crowed2)
+            {
+                if (Crowed.Crowed3)
+                {
+                    Crowed.MoveCrowedLevel3Down();
+                }
+            }
+            else
+            {
+                Crowed.MoveCrowedLevel2Up();
+            }
         }
         else if (JokeSectionPercent <= .50)
         {
