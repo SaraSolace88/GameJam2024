@@ -482,14 +482,16 @@ MonoBehaviour:
   MusicNote2: {fileID: 21300000, guid: b89292cda6b55b54ba3eb400c0fc889c, type: 3}
   MusicNote3: {fileID: 21300000, guid: f6a47fe22344e0640b61aa8c9f8344bf, type: 3}
   joke_sections:
-  - {x: 5, y: 10}
-  - {x: 11, y: 13}
-  - {x: 14, y: 15}
-  - {x: 20, y: 40}
-  - {x: 20, y: 40}
-  - {x: 45, y: 53}
-  - {x: 60, y: 75}
-  - {x: 90, y: 120}
+  - {x: 5, y: 15}
+  - {x: 16, y: 40}
+  - {x: 41, y: 70}
+  - {x: 75, y: 90}
+  - {x: 91, y: 105}
+  - {x: 105, y: 120}
+  - {x: 140, y: 150}
+  - {x: 151, y: 170}
+  - {x: 171, y: 210}
+  - {x: 211, y: 235}
 --- !u!82 &8195788049932777722
 AudioSource:
   m_ObjectHideFlags: 0

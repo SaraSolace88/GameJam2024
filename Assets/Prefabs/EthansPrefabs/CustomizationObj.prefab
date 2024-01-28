@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeadSprites:
-  - {fileID: 21300000, guid: 678f7bf880ab29247a25ea59a507ae6f, type: 3}
-  - {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
+  - {fileID: 21300000, guid: 3e2a3e8307ea1d845b2c85d60348af74, type: 3}
+  - {fileID: 21300000, guid: 5cc9017caa8ea604b801535fc27e25ea, type: 3}
   - {fileID: 21300000, guid: 9742627460df7ac47aa557fe8a821175, type: 3}
   - {fileID: 21300000, guid: 3f7098f90e9c42343aecd70d8bf49cdd, type: 3}
+  - {fileID: 21300000, guid: 716aac0710b1ecc4baac0297764c89e5, type: 3}
   EyeSprites:
   - {fileID: 21300000, guid: 675d4abbbf593b74db2b4b63ce173556, type: 3}
   - {fileID: 21300000, guid: c7b7180e9e8e6ce4c94ad7bb28ce8b99, type: 3}
@@ -65,7 +66,7 @@ MonoBehaviour:
   - {r: 0.509434, g: 0.07929869, b: 0.13344689, a: 1}
   - {r: 0.44228956, g: 0.49056602, b: 0.4188323, a: 1}
   ClothsSprites:
-  - {fileID: 21300000, guid: 1284436d679d1534aa41737860068efc, type: 3}
+  - {fileID: 21300000, guid: 5cd1ce2df70011c488512ec18f7afbea, type: 3}
   - {fileID: 21300000, guid: 2949b0a1a2615f841a35adf121b4a0da, type: 3}
   MicSprites:
   - {fileID: 21300000, guid: 47abfce04f5b8ab4db38d400c928c39e, type: 3}
