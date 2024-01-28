@@ -64,7 +64,6 @@ public class joke_gen : MonoBehaviour
         joke_text.text = "";
 
         Array.Fill(used, false);
-        
     }
     private void set_dsp_time(float dsp_song_start) { 
             dsp_start_time = dsp_song_start;
