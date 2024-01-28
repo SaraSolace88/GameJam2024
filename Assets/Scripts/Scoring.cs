@@ -84,7 +84,7 @@ public class Scoring : MonoBehaviour
         }
         else if(noteScore == NoteScore.Miss)
         {
-            NoteHitScore += 100;
+            NoteHitScore += 0;
         }
         else if(noteScore == NoteScore.Perfect)
         {
@@ -98,7 +98,10 @@ public class Scoring : MonoBehaviour
             NoteHitScore += 50;
         }
       
-        MaxScore += 100;
+        if(NoteHitScore >= 0)
+        {
+            MaxScore += 100;
+        }
         if (JokeSection)
         {
             JokeSectionTotalNotes += 1;
@@ -107,10 +110,8 @@ public class Scoring : MonoBehaviour
             }
             
         }
-        if(NoteHitScore > 0)
-        {
-            Score += NoteHitScore;
-        }
+        Score += NoteHitScore;
+        Debug.Log(NoteHitScore);
         UpdateGrade();
     }
 
