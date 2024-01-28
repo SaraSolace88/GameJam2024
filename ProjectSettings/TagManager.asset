@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RhythmManager
   - SceneLoader
+  - Song
   layers:
   - Default
   - TransparentFX

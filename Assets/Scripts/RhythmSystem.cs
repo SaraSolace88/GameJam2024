@@ -14,7 +14,8 @@ public class RhythmSystem : MonoBehaviour
     //how much time (in seconds) has passed since the song started
     private float dspTimeStart;
     //bool for if song is started or not
-    [SerializeField] private bool songState, test;
+    public bool songState;
+    public bool test;
     // Joke section we're on right now.
     private int joke_section_idx = 0;
 
@@ -38,7 +39,7 @@ public class RhythmSystem : MonoBehaviour
 
     public static Action OnJokeEnd = delegate {};
 
-    private void Start()
+    private void Awake()
     {
         int song_id = PlayerPrefs.GetInt("song_id");
         if(song_prefabs.Length == 0) {
@@ -59,10 +60,10 @@ public class RhythmSystem : MonoBehaviour
     {
         if (!PS.IsPaused)
         {
+            
             if (test)
             {
                 StartSong();
-
             }
             if (songState)
             {

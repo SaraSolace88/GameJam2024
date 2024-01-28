@@ -1,8 +1,12 @@
+using System.Xml.Schema;
 using UnityEngine;
 
 public class SongStats : MonoBehaviour
 {
+    public float TotalBeats;
+
     private PauseMenu PS;
+
     [SerializeField] private int Offst;
 
     //beats per minute of a song
@@ -31,8 +35,12 @@ public class SongStats : MonoBehaviour
 
     private GameObject rhythmSystem;
 
-    private void Start() {
+    private void Awake()
+    {
+        TotalBeats = notes[notes.Length-1].x;
+    }
 
+    private void Start() {
         // Please don't fire me.
         PS = GameObject.Find("SceneLoaderObject(PutOneInEachScene)").GetComponent<PauseMenu>();
     }
