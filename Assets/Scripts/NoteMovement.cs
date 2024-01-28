@@ -4,6 +4,8 @@ public class NoteMovement : MonoBehaviour
 {
     private Transform spawnPos, removePos;
     private GameObject rhythmManager;
+    public bool heldNote;
+    public float beatOfTrail;
     private float beatOfThisNote;
     private int collum;
     private void Start()
