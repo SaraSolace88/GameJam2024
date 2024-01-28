@@ -82,7 +82,7 @@ public class Scoring : MonoBehaviour
         int NoteHitScore = 0;
         if(noteScore == NoteScore.None)
         {
-            NoteHitScore -= 50;
+            NoteHitScore -= 30;
         }
         else if(noteScore == NoteScore.Miss)
         {
@@ -93,11 +93,11 @@ public class Scoring : MonoBehaviour
             NoteHitScore += 100;
         }else if (noteScore == NoteScore.Good)
         {
-            NoteHitScore += 80;
+            NoteHitScore += 90;
         }
         else if (noteScore == NoteScore.Bad)
         {
-            NoteHitScore += 50;
+            NoteHitScore += 70;
         }
       
         if(NoteHitScore >= 0)
@@ -236,7 +236,7 @@ public class Scoring : MonoBehaviour
     {
         Grade = 'S';
         Score = 0;
-
+        MaxScore = 0;
     }
 
     void OnEnable() {
