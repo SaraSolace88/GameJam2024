@@ -4910,6 +4910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joke_text_obj: {fileID: 1737951274}
+  TextBubble: {fileID: 950624808}
 --- !u!4 &1642604401
 Transform:
   m_ObjectHideFlags: 0
@@ -5997,6 +5998,25 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 31395535}
   m_SourcePrefab: {fileID: 100100000, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+--- !u!1 &1988449365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1254773330197576072, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
+  m_PrefabInstance: {fileID: 1988449364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988449366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988449365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa15817a2ffc954499ad7ac2294e0ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tomatoe: {fileID: 0}
+  Amount: 0
 --- !u!1 &2019083529
 GameObject:
   m_ObjectHideFlags: 0
