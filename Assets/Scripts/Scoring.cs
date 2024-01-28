@@ -81,7 +81,7 @@ public class Scoring : MonoBehaviour
         int NoteHitScore = 0;
         if(noteScore == NoteScore.None)
         {
-            NoteHitScore -= 10;
+            NoteHitScore -= 50;
         }
         else if(noteScore == NoteScore.Miss)
         {
@@ -139,20 +139,13 @@ public class Scoring : MonoBehaviour
         {
             JokeSectionPointsEarned = hitNotes * 1000;
             Crowed.PlayEmotes(3);
-            if (Crowed.Crowed2)
-            {
-                if (Crowed.Crowed3)
-                {
-                    return;
-                }
-                else
-                {
-                    Crowed.MoveCrowedLevel3Up();
-                }
-            }
-            else
+            if(!Crowed.Crowed2)
             {
                 Crowed.MoveCrowedLevel2Up();
+            }
+            if(Crowed.Crowed3)
+            {
+                Crowed.MoveCrowedLevel3Up();
             }
         }
         else if (JokeSectionPercent >= .90)
@@ -211,6 +204,15 @@ public class Scoring : MonoBehaviour
         {
             JokeSectionPointsEarned = 0;
             Crowed.PlayEmotes(1);
+
+            if(Crowed.Crowed3)
+            {
+                Crowed.MoveCrowedLevel3Down();
+            }
+            if (Crowed.Crowed2)
+            {
+                Crowed.MoveCrowedLevel2Down();
+            }
         }
         
 

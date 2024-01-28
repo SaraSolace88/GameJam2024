@@ -53,6 +53,8 @@ MonoBehaviour:
   EyeSprites:
   - {fileID: 21300000, guid: 675d4abbbf593b74db2b4b63ce173556, type: 3}
   - {fileID: 21300000, guid: c7b7180e9e8e6ce4c94ad7bb28ce8b99, type: 3}
+  - {fileID: 21300000, guid: 080859bd2c7027347abf56c6059b790b, type: 3}
+  - {fileID: 21300000, guid: ba8017bee9a7aee4daece3aa40abd0f2, type: 3}
   SkinColors:
   - {r: 0.9607843, g: 0.79607844, b: 0.36078432, a: 1}
   - {r: 0.78039217, g: 1, b: 0.92941177, a: 1}
@@ -64,6 +66,7 @@ MonoBehaviour:
   - {r: 0.44228956, g: 0.49056602, b: 0.4188323, a: 1}
   ClothsSprites:
   - {fileID: 21300000, guid: 1284436d679d1534aa41737860068efc, type: 3}
+  - {fileID: 21300000, guid: 2949b0a1a2615f841a35adf121b4a0da, type: 3}
   MicSprites:
   - {fileID: 21300000, guid: 47abfce04f5b8ab4db38d400c928c39e, type: 3}
   - {fileID: 21300000, guid: cabd7ba691ce9224eb39c4d5d1b76abd, type: 3}
