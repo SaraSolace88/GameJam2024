@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum NoteScore
 {
@@ -12,6 +13,8 @@ public enum NoteScore
 
 public class Scoring : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI ScoreText;
+
     char Grade;
 
     long Score;
@@ -24,6 +27,10 @@ public class Scoring : MonoBehaviour
 
     int JokeSectionHitNotes;
 
+    private void OnGUI()
+    {
+        ScoreText.text = Score.ToString();
+    }
     private void UpdateGrade()
     {
         float relScore = MaxScore / Score;

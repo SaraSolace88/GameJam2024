@@ -49,10 +49,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
   - {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
   - {fileID: 21300000, guid: c750eaf87d4256c40aec5bb3c79557f9, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   EyeSprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -73,13 +69,6 @@ MonoBehaviour:
   - {r: 0.44228956, g: 0.49056602, b: 0.4188323, a: 1}
   ClothsSprites:
   - {fileID: 21300000, guid: 1284436d679d1534aa41737860068efc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   MicSprites:
   - {fileID: 21300000, guid: 47abfce04f5b8ab4db38d400c928c39e, type: 3}
   - {fileID: 21300000, guid: cabd7ba691ce9224eb39c4d5d1b76abd, type: 3}
@@ -90,14 +79,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fb6559a095e12e7439bb0ea3e22ee66b, type: 3}
   - {fileID: 21300000, guid: f043b733db4df2740a591a9f4ca0ce4e, type: 3}
   LightSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 28b133759652b9e42bd22b0f10b70346, type: 3}
+  - {fileID: 21300000, guid: 93c59e2034e7da04f8163ddfec74c098, type: 3}
+  - {fileID: 21300000, guid: 2521d772084d80442ba3ac2fda010db0, type: 3}
+  - {fileID: 21300000, guid: 5bdadeda0b4e0094ba709811a3a3a6a8, type: 3}
+  - {fileID: 21300000, guid: 0d94ef2354536bc449f48897afff8c28, type: 3}
   StageSprites:
   - {fileID: 21300000, guid: 9be84be5de4a25843a296d4f1d2dcf91, type: 3}
   - {fileID: 21300000, guid: 0619cf7efbe01c84bbeefefb94d47313, type: 3}
@@ -119,4 +105,5 @@ MonoBehaviour:
   MicSprite: {fileID: 0}
   HeadSprite: {fileID: 0}
   ClothsSprite: {fileID: 0}
+  LightSprite: {fileID: 0}
   BLevel: 0
