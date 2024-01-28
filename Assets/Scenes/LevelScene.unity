@@ -2484,6 +2484,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651762191}
   m_CullTransparentMesh: 1
+--- !u!1 &679406158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3546939159499242739, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+  m_PrefabInstance: {fileID: 1326941398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &761680400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,9 +4149,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3786045186170367941, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786045186170367941, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786045186170367941, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6731651399120271502, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
       propertyPath: m_Name
       value: Customizable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103211287648533965, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103211287648533965, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103211287648533965, guid: 49aba9adfaa20e44aa80975ecd338972, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4824,6 +4853,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
+      propertyPath: EyeSprite
+      value: 
+      objectReference: {fileID: 679406158}
+    - target: {fileID: 4770010330586383213, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       propertyPath: Lightnumb
       value: 
       objectReference: {fileID: 0}
@@ -4868,7 +4901,8 @@ PrefabInstance:
       value: CustomizationObj
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1214169250321322779, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2485533861605837063, guid: f96ccaa727bc35544808c7bb20a1d025, type: 3}
       insertIndex: -1
