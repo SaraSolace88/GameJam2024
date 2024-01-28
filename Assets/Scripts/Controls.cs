@@ -53,6 +53,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""fcb588b4-c98f-4e62-b92e-924b3afe7b44"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""50f412f5-48d2-433f-baf6-96799de14dff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -121,6 +139,50 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""NoteC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07101e00-61dc-4d0c-b9d1-f929585e3fb8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6b0f78d-4e23-4d7d-b78a-d3f3cb69f822"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ff0ab28-bd88-4f45-b9ed-80f18eec211d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2eb7045-65b3-4c5c-ae57-597afdc59424"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -132,6 +194,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_NoteA = m_Player.FindAction("NoteA", throwIfNotFound: true);
         m_Player_NoteB = m_Player.FindAction("NoteB", throwIfNotFound: true);
         m_Player_NoteC = m_Player.FindAction("NoteC", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -196,6 +260,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_NoteA;
     private readonly InputAction m_Player_NoteB;
     private readonly InputAction m_Player_NoteC;
+    private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Start;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -203,6 +269,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @NoteA => m_Wrapper.m_Player_NoteA;
         public InputAction @NoteB => m_Wrapper.m_Player_NoteB;
         public InputAction @NoteC => m_Wrapper.m_Player_NoteC;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Start => m_Wrapper.m_Player_Start;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -221,6 +289,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @NoteC.started += instance.OnNoteC;
             @NoteC.performed += instance.OnNoteC;
             @NoteC.canceled += instance.OnNoteC;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Start.started += instance.OnStart;
+            @Start.performed += instance.OnStart;
+            @Start.canceled += instance.OnStart;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -234,6 +308,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @NoteC.started -= instance.OnNoteC;
             @NoteC.performed -= instance.OnNoteC;
             @NoteC.canceled -= instance.OnNoteC;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Start.started -= instance.OnStart;
+            @Start.performed -= instance.OnStart;
+            @Start.canceled -= instance.OnStart;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -256,5 +336,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnNoteA(InputAction.CallbackContext context);
         void OnNoteB(InputAction.CallbackContext context);
         void OnNoteC(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }

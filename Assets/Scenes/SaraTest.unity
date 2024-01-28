@@ -191,11 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717dd5972a11a204f8279f3d14a0074e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &446186129 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2002631816277070184, guid: 51113253b2b16e143be7226112497dbd, type: 3}
-  m_PrefabInstance: {fileID: 747289739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619941383
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,22 +352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RhythmManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1352190460905695732, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: m_Size.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352190460905695732, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: PS
       value: 
       objectReference: {fileID: 201702571}
-    - target: {fileID: 3822355529996386314, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: song
-      value: 
-      objectReference: {fileID: 446186129}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -411,18 +394,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506673903147961519, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903797131591027285, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: m_Size.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365784287325793985, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: m_Size.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365784287325793985, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
-      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
