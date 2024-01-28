@@ -8,13 +8,29 @@ public class TutorialSystem : MonoBehaviour
 
     public bool IsTutorial;
     public bool Run;
+
     public void Awake()
+    {
+        if(PlayerPrefs.HasKey("Tut"))
+        {
+            Run = false;
+        }
+    }
+    public void Start()
     {
         if (Run)
         {
-            TutorialPanel.SetActive(true);
-            Time.timeScale = 0f;
-            IsTutorial = true;
+            if (!PlayerPrefs.HasKey("TUT"))
+            {
+                PlayerPrefs.SetInt("TUT", 1);
+                TutorialPanel.SetActive(true);
+                Time.timeScale = 0f;
+                IsTutorial = true;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum NoteScore
 {
@@ -12,6 +13,11 @@ public enum NoteScore
 
 public class Scoring : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] TextMeshProUGUI ScoreText1;
+    [SerializeField] TextMeshProUGUI LetterGradeText;
+    [SerializeField] TextMeshProUGUI LetterGrade1Text;
+
     char Grade;
 
     long Score;
@@ -24,6 +30,13 @@ public class Scoring : MonoBehaviour
 
     int JokeSectionHitNotes;
 
+    private void OnGUI()
+    {
+        ScoreText.text = Score.ToString();
+        ScoreText1.text = Score.ToString();
+        LetterGradeText.text = Grade.ToString();
+        LetterGrade1Text.text = Grade.ToString();
+    }
     private void UpdateGrade()
     {
         if (Score == 0 && MaxScore == 0)

@@ -35,7 +35,8 @@ public class LoadingSystem : MonoBehaviour
     }
 
 
-    void SavingSong(int song) {
+    void SavingSong(int song) 
+    {
         PlayerPrefs.SetInt("song_id", song);
     }
 

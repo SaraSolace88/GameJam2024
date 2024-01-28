@@ -29,6 +29,7 @@ public class CosmeticsSystem : MonoBehaviour
     [SerializeField] private GameObject MicSprite;
     [SerializeField] private GameObject HeadSprite;
     [SerializeField] private GameObject ClothsSprite;
+    [SerializeField] private GameObject LightSprite;
 
     public bool BLevel;
 
@@ -67,6 +68,12 @@ public class CosmeticsSystem : MonoBehaviour
         }
         MicSprite.GetComponent<SpriteRenderer>().sprite = MicSprites[SelMic];
 
+        if (PlayerPrefs.HasKey("LightNumb"))
+        {
+            SelLight = PlayerPrefs.GetInt("LightNumb");
+        }
+        LightSprite.GetComponent<SpriteRenderer>().sprite = LightSprites[SelLight];
+
 
         if (PlayerPrefs.HasKey("StageNumb"))
         {
@@ -97,7 +104,7 @@ public class CosmeticsSystem : MonoBehaviour
             SelHead = 0;
         }
         HeadSprite.GetComponent<SpriteRenderer>().sprite = HeadSprites[SelHead];
-        PlayerPrefs.SetInt("MicHead", SelHead);
+        PlayerPrefs.SetInt("HeadNumb", SelHead);
     }
     public void RightHead()
     {
@@ -107,7 +114,7 @@ public class CosmeticsSystem : MonoBehaviour
             SelHead = HeadSprites.Count - 1;
         }
         HeadSprite.GetComponent<SpriteRenderer>().sprite = HeadSprites[SelHead];
-        PlayerPrefs.SetInt("MicHead", SelHead);
+        PlayerPrefs.SetInt("HeadNumb", SelHead);
     }
     public void LeftEye()
     {
@@ -154,7 +161,7 @@ public class CosmeticsSystem : MonoBehaviour
             SelCloths = 0;
         }
         ClothsSprite.GetComponent<SpriteRenderer>().sprite = ClothsSprites[SelCloths];
-        PlayerPrefs.SetInt("ClothsHead", SelCloths);
+        PlayerPrefs.SetInt("ClothsNumb", SelCloths);
     }
     public void RightCloth()
     {
@@ -164,7 +171,7 @@ public class CosmeticsSystem : MonoBehaviour
             SelCloths = ClothsSprites.Count - 1;
         }
         ClothsSprite.GetComponent<SpriteRenderer>().sprite = ClothsSprites[SelCloths];
-        PlayerPrefs.SetInt("ClothsHead", SelCloths);
+        PlayerPrefs.SetInt("ClothsNumb", SelCloths);
     }
     public void LeftMic()
     {
@@ -193,6 +200,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelLight = 0;
         }
+        LightSprite.GetComponent<SpriteRenderer>().sprite = LightSprites[SelLight];
+        PlayerPrefs.SetInt("LightNumb", SelLight);
     }
     public void RightLight()
     {
@@ -201,6 +210,8 @@ public class CosmeticsSystem : MonoBehaviour
         {
             SelLight = LightSprites.Count - 1;
         }
+                LightSprite.GetComponent<SpriteRenderer>().sprite = LightSprites[SelLight];
+        PlayerPrefs.SetInt("LightNumb", SelLight);
     }
     public void LeftStage()
     {

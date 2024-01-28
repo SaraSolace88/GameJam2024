@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8195788049932777722}
   m_Layer: 0
   m_Name: JazzSwingSong
-  m_TagString: Untagged
+  m_TagString: Song
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087bae91e95558a42883dea1fc48f3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalBeats: 0
   Offst: 0
   bpm: 136
   notes:
