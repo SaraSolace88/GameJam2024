@@ -16,11 +16,11 @@ public class NoteMovement : MonoBehaviour
     {
         if(spawnPos == null)
         {
-            spawnPos = rhythmManager.transform.GetChild(collum).GetChild(0);
+            spawnPos = rhythmManager.transform.GetChild(collum-1).GetChild(0);
         }
         if (removePos == null)
         {
-            removePos = rhythmManager.transform.GetChild(collum).GetChild(1);
+            removePos = rhythmManager.transform.GetChild(collum-1).GetChild(1);
         }
 
         if(spawnPos && removePos)
