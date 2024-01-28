@@ -16,6 +16,7 @@ public class SongStats : MonoBehaviour
     //keep all the position-in-beats of notes in the song and collum of track.
     //Vector2(position, collum)
     [SerializeField] private Vector2[] notes;
+    [SerializeField] private Vector2[] temp;
     [SerializeField] private Vector3[] heldNotes;
 
 
@@ -46,6 +47,26 @@ public class SongStats : MonoBehaviour
     private void Start() {
         // Please don't fire me.
         PS = GameObject.Find("SceneLoaderObject(PutOneInEachScene)").GetComponent<PauseMenu>();
+        //Here's to hoping this works its supposed to sort it
+        
+        for(int h = 0; h<temp.Length; h++){
+            temp[h].x = notes[h].x;
+            temp[h].y = notes[h].y;
+        }
+        float minimum = 999;
+        int minlocation = 0;
+        for(int h = 0; h<temp.Length; h++){
+            minimum = 999;
+            for(int i = 0; i<temp.Length; i++){
+                if(temp[i].x < minimum){
+                minimum = temp[i].x;
+                minlocation = i;
+                }
+            }
+            notes[h].x = temp[minlocation].x;
+            notes[h].y = temp[minlocation].y;
+            temp[minlocation].x = 9999;
+        }
     }
 
     private void OnEnable()
