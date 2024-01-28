@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 21ec2a1e3c66725408c49f49944143ae, type: 3}
   - {fileID: 21300000, guid: 1dafc746066417848a8b9e27aef24986, type: 3}
   - {fileID: 21300000, guid: dc98b605915b00f42870184404eb3082, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: be7b0694aa5cad044a7a472def8d0c4a, type: 3}
   Headnumb: {fileID: 0}
   Eyenumb: {fileID: 0}
   Skinnumb: {fileID: 0}
