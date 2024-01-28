@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+//using System.Diagnostics;
 
 public enum NoteScore
 {
@@ -130,6 +131,7 @@ public class Scoring : MonoBehaviour
     {
         if(totalNotes == 0)
         {
+            Debug.Log("No Noes");
             return;
         }
         float JokeSectionPercent = hitNotes / totalNotes;
