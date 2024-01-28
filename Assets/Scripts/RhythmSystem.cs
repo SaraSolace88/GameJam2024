@@ -11,7 +11,7 @@ public class RhythmSystem : MonoBehaviour
     [SerializeField] private float timeAfterSong;
     [SerializeField] private GameObject EndScreen;
     [SerializeField] private GameObject BGRS;
-    [SerializeField] private GameAction TextBubble;
+    [SerializeField] private GameObject TextBubble;
 
     private ProgressBar pb;
 
