@@ -25,12 +25,12 @@ public class TomatoesGen : MonoBehaviour
     private void Splat()
     {
         Debug.Log("splat");
-
-    }
-
-    IEnumerator Unsplat()
-    {
-        yield return new WaitForSeconds(delay);
+        //Set Random Location on the Chart
+        //X (3.9 - 6.2)
+        //Y (-2 - 4.5)
+        var ob = Instantiate(Tomatoe);
+        var clus = ob.GetComponent<TomatoScript>();
+        clus.delay = delay;
     }
 
 }

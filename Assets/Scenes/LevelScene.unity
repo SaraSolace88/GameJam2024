@@ -5876,14 +5876,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988449365}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa15817a2ffc954499ad7ac2294e0ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tomatoe: {fileID: 0}
+  Tomatoe: {fileID: 106782822361380181, guid: 5f00400ca7684b443aec677ff80f9a17, type: 3}
   Amount: 0
-  delay: 0
+  delay: 5
 --- !u!1 &1988449367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1595881224273367436, guid: eff51fff7ff5e234b9896b5a39635535, type: 3}
