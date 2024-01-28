@@ -69,7 +69,7 @@ public class NoteInteraction : MonoBehaviour
                 holdNote = true;
             }
         }
-        //StartCoroutine(nameof(holdNote));
+        StartCoroutine(nameof(NoteHit));
         collision.GetComponent<GameActionSequence>().Play();
     }
 
