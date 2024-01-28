@@ -44,9 +44,6 @@ public class RhythmSystem : MonoBehaviour
         if(song_prefabs.Length == 0) {
             Debug.LogError("No songs have been added to RhythmSystem!");
         }
-        if(song_id == -1) {
-            Debug.LogError("Invalid song_id");
-        }
         song = Instantiate(song_prefabs[song_id]);
         
      
