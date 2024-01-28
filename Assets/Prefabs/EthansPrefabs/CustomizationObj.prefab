@@ -48,9 +48,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 678f7bf880ab29247a25ea59a507ae6f, type: 3}
   - {fileID: 21300000, guid: 613d0257ee696a24b9eabd32b67fcade, type: 3}
   - {fileID: 21300000, guid: e30de62d93612f94080f5ede76f32237, type: 3}
-  - {fileID: 21300000, guid: c750eaf87d4256c40aec5bb3c79557f9, type: 3}
+  - {fileID: 21300000, guid: 3f7098f90e9c42343aecd70d8bf49cdd, type: 3}
   EyeSprites:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 675d4abbbf593b74db2b4b63ce173556, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

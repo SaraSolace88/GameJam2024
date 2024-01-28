@@ -17,6 +17,7 @@ public class Scoring : MonoBehaviour
     [SerializeField] TextMeshProUGUI ScoreText1;
     [SerializeField] TextMeshProUGUI LetterGradeText;
     [SerializeField] TextMeshProUGUI LetterGrade1Text;
+    [SerializeField] GameObject Crowed;
 
     char Grade;
 
