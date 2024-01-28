@@ -55,6 +55,12 @@ public class RhythmSystem : MonoBehaviour
         if(song_prefabs.Length == 0) {
             Debug.LogError("No songs have been added to RhythmSystem!");
         }
+        if(song_id < 0 || song_id > 2) {
+            Debug.Log("Looks like someone skipped the level select and went straight into the game. defaulting to smooth jazz.");
+            Debug.Log($"(PlayerPrefs song_id is {song_id})");
+            song_id = 1;
+            PlayerPrefs.SetInt("song_Id", song_id);
+        }
         song = Instantiate(song_prefabs[song_id]);
         
      

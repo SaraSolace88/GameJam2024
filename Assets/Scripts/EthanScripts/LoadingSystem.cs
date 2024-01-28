@@ -13,7 +13,7 @@ public class LoadingSystem : MonoBehaviour
 
     // The index into RhythmSystem.song_prefabs.
     // This must be overwritten by a button before LoadSceneLoading is called.
-    private int song_to_play = -1;
+    private int song_to_play = -420;
 
     public void QuitGame()
     {
@@ -29,7 +29,9 @@ public class LoadingSystem : MonoBehaviour
         Main.SetActive(false);
         LoadingScreen.SetActive(true);
 
-        SavingSong(song_to_play);
+        if(song_to_play != -420) {
+            SavingSong(song_to_play);
+        }
         StartCoroutine(LoadSceneAsync(LevelToLoad));
         Time.timeScale = 1;
     }
@@ -38,6 +40,7 @@ public class LoadingSystem : MonoBehaviour
     void SavingSong(int song) 
     {
         PlayerPrefs.SetInt("song_id", song);
+        PlayerPrefs.Save();
     }
 
     IEnumerator LoadSceneAsync(string LevelToLoad)
