@@ -873,6 +873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoaderObject(PutOneInEachScene)
       objectReference: {fileID: 0}
+    - target: {fileID: 6516532134810487396, guid: b3b120ab0f71b474daefe2d4d34ac9c8, type: 3}
+      propertyPath: m_TagString
+      value: SceneLoader
+      objectReference: {fileID: 0}
     - target: {fileID: 8117070569367651226, guid: b3b120ab0f71b474daefe2d4d34ac9c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

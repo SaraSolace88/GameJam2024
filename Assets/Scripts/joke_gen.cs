@@ -5,7 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-
+using UnityEngine.UI;
 using static jokes;
 // TODO:
 // Switch between quality of jokes (3 levels)
@@ -22,6 +22,8 @@ public class joke_gen : MonoBehaviour
     // GameObjects.
     [SerializeField] GameObject joke_text_obj;
     TMP_Text joke_text;
+
+    private PauseMenu pause_sys;
 
     float dsp_start_time;
 
@@ -58,6 +60,7 @@ public class joke_gen : MonoBehaviour
         }
         // ============
 
+        pause_sys = GameObject.FindWithTag("SceneLoader").GetComponent<PauseMenu>();
         // Context init =================================
 
         // This is how you change the text.
@@ -136,6 +139,16 @@ public class joke_gen : MonoBehaviour
         umm_str = base_uhhs[selection] + new string('.', uhh_length - uhh_min);
     }
 
+    IEnumerator JokeGoAway() {
+        yield return new WaitForSeconds(2f);
+
+        // Only erase the joke if another joke hasn't started already.
+        if(running_joke == false) {
+            joke_text.text = "";
+            Debug.Log("Erasing text.");
+        }
+    }
+
 
     void start_new_joke(float joke_length_sec)
     {
@@ -151,8 +164,6 @@ public class joke_gen : MonoBehaviour
         int num_of_jokes = jokes.so_many_jokes.Length;
         //System.Random rand_sys = new System.Random();
         //int joke_idx = rand_sys.Next(0, num_of_jokes);
-
-        
         
         float ideal_length = 4 * joke_length_sec; //Ideal Joke String Length
         List<string> good_jokes = new List<string>();
@@ -175,8 +186,7 @@ public class joke_gen : MonoBehaviour
         int joke_idx = rand.Next(0, good_jokes.Count);
 
         // pick the joke to use.
-        the_joke = jokes.so_many_jokes[joke_idx];
-
+        the_joke = good_jokes[joke_idx];
         
         // Init other variables.
         glyphs_per_second = the_joke.Length / joke_length_sec ;
@@ -201,7 +211,7 @@ public class joke_gen : MonoBehaviour
         // }
 
         // If we are finished, be done.
-        if ( running_joke == false )
+        if ( running_joke == false || pause_sys.IsPaused == true )
         {
             return;
         }
@@ -252,6 +262,8 @@ public class joke_gen : MonoBehaviour
             if (joke_progress == the_joke.Length)
             {
                 running_joke = false;
+                StartCoroutine(JokeGoAway());
+                Debug.Log("Starting timout timer!");
             }
         }
     }
