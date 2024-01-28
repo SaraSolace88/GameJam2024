@@ -20,6 +20,7 @@ public class Scoring : MonoBehaviour
     [SerializeField] TextMeshProUGUI LetterGradeText;
     [SerializeField] TextMeshProUGUI LetterGrade1Text;
     [SerializeField] TextMeshProUGUI JokeSectionPoints;
+    [SerializeField] private GameObject Scoringtext;
     [SerializeField] CrowedSystem Crowed;
 
     public char Grade;
@@ -44,6 +45,7 @@ public class Scoring : MonoBehaviour
         ScoreText1.text = Score.ToString();
         LetterGradeText.text = Grade.ToString();
         LetterGrade1Text.text = Grade.ToString();
+        JokeSectionPoints.text = JokeSectionPointsEarned.ToString();
     }
     private void UpdateGrade()
     {
@@ -124,9 +126,17 @@ public class Scoring : MonoBehaviour
     void EndJokeSection()
     {
         JokeSection = false;
+        Scoringtext.SetActive(true);
+        StartCoroutine(EndJokeScore());
         JokeSectionCalc(JokeSectionTotalNotes, JokeSectionHitNotes);
         JokeSectionTotalNotes = 0;
         JokeSectionHitNotes = 0;
+    }
+
+    IEnumerator EndJokeScore()
+    {
+        yield return new WaitForSeconds(2f);
+        Scoringtext.SetActive(false);
     }
     private void JokeSectionCalc(int totalNotes,int hitNotes)
     {
