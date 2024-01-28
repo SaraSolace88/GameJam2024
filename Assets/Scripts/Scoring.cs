@@ -115,7 +115,7 @@ public class Scoring : MonoBehaviour
         UpdateGrade();
     }
 
-    void StartJokeSection()
+    void StartJokeSection( float _)
     {
         JokeSection = true;
     }
@@ -221,36 +221,45 @@ public class Scoring : MonoBehaviour
         Score += JokeSectionPointsEarned;
         UpdateGrade();
     }
+
+    void NoteCalcMiss() {
+        NoteCalc(NoteScore.Miss);
+    }
+
+    void NoteCalcLate() {
+        NoteCalc(NoteScore.None);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Grade = 'S';
         Score = 0;
 
-        //
-        RhythmSystem.OnJokeStart += delegate (float x)
-        {
-            StartJokeSection();
-        };
-        RhythmSystem.OnJokeEnd += delegate ()
-        {
-            EndJokeSection();
-        };
+    }
 
-        EndHit.HitMiss += delegate ()
-        {
-            NoteCalc(NoteScore.Miss);
-        };
+    void OnEnable() {
 
-        MissingCollision.Hit += delegate (NoteScore y)
-        {
-            NoteCalc(y);
-        };
+        RhythmSystem.OnJokeStart += StartJokeSection;
+        RhythmSystem.OnJokeEnd += EndJokeSection;
 
-        EarlyLateHit.Late += delegate ()
-        {
-            NoteCalc(NoteScore.None);
-        };
+        EndHit.HitMiss += NoteCalcMiss;
 
+        MissingCollision.Hit += NoteCalc;
+
+        EarlyLateHit.Late += NoteCalcLate;
+    }
+
+    void OnDisable() {
+        RhythmSystem.OnJokeStart -= StartJokeSection;
+        RhythmSystem.OnJokeEnd -= EndJokeSection;
+
+        EndHit.HitMiss -= NoteCalcMiss;
+
+        MissingCollision.Hit -= NoteCalc;
+
+        EarlyLateHit.Late -= NoteCalcLate;
     }
 }
+
+
