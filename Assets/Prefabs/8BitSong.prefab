@@ -93,8 +93,8 @@ MonoBehaviour:
   - {x: 46, y: 2}
   - {x: 48, y: 3}
   musicNote: {fileID: 5864018117808469488, guid: 20dda02da31fb7945bbdb2e4c73e3a56, type: 3}
-  MusicNote2: {fileID: 0}
-  MusicNote3: {fileID: 0}
+  MusicNote2: {fileID: 21300000, guid: b89292cda6b55b54ba3eb400c0fc889c, type: 3}
+  MusicNote3: {fileID: 21300000, guid: f6a47fe22344e0640b61aa8c9f8344bf, type: 3}
   joke_sections:
   - {x: 5, y: 10}
   - {x: 15, y: 30}
