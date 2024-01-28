@@ -58,7 +58,6 @@ public class Scoring : MonoBehaviour
         {
             NoteHitScore += 100;
         }
-        /* For later if we add note grades
         else if(noteScore == NoteScore.Perfect)
         {
             MaxScore += 100;
@@ -70,7 +69,7 @@ public class Scoring : MonoBehaviour
         {
             MaxScore += 50;
         }
-        */
+      
         MaxScore += 100;
         if (JokeSection)
         {
@@ -138,6 +137,16 @@ public class Scoring : MonoBehaviour
         {
             EndJokeSection();
         };
-        
+
+        MissingCollision.HitMiss += delegate ()
+        {
+            NoteCalc(NoteScore.Miss);
+        };
+
+        MissingCollision.Hit += delegate (NoteScore y)
+        {
+            NoteCalc(y);
+        };
+
     }
 }
