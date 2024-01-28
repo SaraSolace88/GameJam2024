@@ -8,7 +8,8 @@ public enum NoteScore
     Perfect,
     Good,
     Bad,
-    Miss
+    Miss,
+    None
 }
 
 public class Scoring : MonoBehaviour
@@ -77,7 +78,11 @@ public class Scoring : MonoBehaviour
 
         //For different note hits
         int NoteHitScore = 0;
-        if(noteScore == NoteScore.Miss)
+        if(noteScore == NoteScore.None)
+        {
+            NoteHitScore -= 10;
+        }
+        else if(noteScore == NoteScore.Miss)
         {
             NoteHitScore += 100;
         }
@@ -102,7 +107,10 @@ public class Scoring : MonoBehaviour
             }
             
         }
-        Score += NoteHitScore;
+        if(NoteHitScore > 0)
+        {
+            Score += NoteHitScore;
+        }
         UpdateGrade();
     }
 
@@ -177,6 +185,11 @@ public class Scoring : MonoBehaviour
         MissingCollision.Hit += delegate (NoteScore y)
         {
             NoteCalc(y);
+        };
+
+        EarlyLateHit.Late += delegate ()
+        {
+            NoteCalc(NoteScore.None);
         };
 
     }

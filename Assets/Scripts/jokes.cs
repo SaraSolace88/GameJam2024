@@ -85,7 +85,7 @@ public class jokes
         "What has five toes, a heel, and isn’t your foot? My foot.",
         "I once was addicted to soap, but I’m all clean now.",
         "I made a whopping six figures last year. I also was fired from the toy factory for being too slow.",
-        "I got an anonymous compliment about my parking skills today. It said, “Parking fine.”",
+        "I got an anonymous compliment about my par king skills today. It said, “Parking fine.”",
         "When two vegetarians get in a fight, is it still called beef?",
         "I heard that 5/4 of people are bad at fractions.",
         "Did you hear the joke about déjà vu? Did you hear the joke about déjà vu?",
