@@ -12,6 +12,7 @@ public class RhythmSystem : MonoBehaviour
     [SerializeField] private float timeAfterSong;
     [SerializeField] private GameObject EndScreen;
     [SerializeField] private GameObject BGRS;
+    [SerializeField] private GameObject Startwindow;
 
     private ProgressBar pb;
     private CharacterMove CM;
@@ -91,6 +92,7 @@ public class RhythmSystem : MonoBehaviour
         if (!songState)
         {
             StartSong();
+            Startwindow.SetActive(false);
         }
     }
 

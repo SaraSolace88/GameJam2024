@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 public class NoteInteraction : MonoBehaviour
 {
     [SerializeField] private ParticleSystem PS;
-    [SerializeField] private AudioSource AS;
-    [SerializeField] private AudioClip AC;
     [SerializeField] private GameActionSequence misInput;
 
     public ComponentType note;
@@ -78,18 +76,19 @@ public class NoteInteraction : MonoBehaviour
     private void ButtonPressed(InputAction.CallbackContext c)
     {
         StartCoroutine(nameof(EnableCollider));
-        PS.Play();
-        AS.PlayOneShot(AC);
         if (note == ComponentType.noteA)
         {
+            PS.Play();
             note1.GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (note == ComponentType.noteB)
         {
+            PS.Play();
             note2.GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (note == ComponentType.noteC)
         {
+            PS.Play();
             note3.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
